@@ -60,8 +60,11 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Controllers\Spel.cs" />
+    <Compile Include="Models\Bord.cs" />
     <Compile Include="Models\Dobbelsteen.cs" />
+    <Compile Include="Models\Eindvakje.cs" />
     <Compile Include="Models\Pion.cs" />
+    <Compile Include="Models\Vakje.cs" />
     <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
