@@ -9,5 +9,6 @@ namespace MensErgerJeNiet
 {
 	public partial class App : Application
 	{
+        /* Deze laten we leeg! */
 	}
 }
