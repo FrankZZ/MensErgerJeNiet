@@ -22,18 +22,18 @@ namespace MensErgerJeNiet.Models
 
 				int modulo = i % 10;
 
-				if (modulo == 0)		//Startvakje
+				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
-				}
-				else if (modulo == 9)	//Koppelvakje voor eindvakjes
-				{
-					huidigVak = new Speelvak();
-					// Methode(s) om eindvakjes te koppelen
 				}
 				else
 				{
 					huidigVak = new Speelvak();
+
+					if (modulo == 9)
+					{
+						// Extra methodes voor koppelvak.
+					}
 				}
 
 				vorigVak = huidigVak;
