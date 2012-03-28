@@ -5,8 +5,8 @@ using System.Text;
 
 namespace MensErgerJeNiet.Models.Vakjes
 {
-    class Beginvakje : Vakje
+    abstract class Vak
     {
-
+		protected 
     }
 }
