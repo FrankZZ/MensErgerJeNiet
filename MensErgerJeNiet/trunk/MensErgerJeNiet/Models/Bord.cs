@@ -7,5 +7,6 @@ namespace MensErgerJeNiet.Models
 {
     class Bord
     {
+
     }
 }

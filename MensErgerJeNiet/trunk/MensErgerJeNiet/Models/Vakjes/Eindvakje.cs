@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MensErgerJeNiet.Models
+namespace MensErgerJeNiet.Models.Vakjes
 {
-    class Eindvakje
+    class Eindvakje : Vakje
     {
     }
 }
