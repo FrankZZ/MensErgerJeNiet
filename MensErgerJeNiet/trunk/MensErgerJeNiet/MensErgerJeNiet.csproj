@@ -61,14 +61,14 @@
     </Page>
     <Compile Include="Controllers\Spel.cs" />
     <Compile Include="Models\Bord.cs" />
-    <Compile Include="Models\Vakjes\Beginvak.cs" />
+    <Compile Include="Models\Vakken\Beginvak.cs" />
     <Compile Include="Models\Dobbelsteen.cs" />
-    <Compile Include="Models\Vakjes\Speelvak.cs" />
-    <Compile Include="Models\Vakjes\Wachtvak.cs" />
-    <Compile Include="Models\Vakjes\Eindvak.cs" />
+    <Compile Include="Models\Vakken\Speelvak.cs" />
+    <Compile Include="Models\Vakken\Wachtvak.cs" />
+    <Compile Include="Models\Vakken\Eindvak.cs" />
     <Compile Include="Models\Pion.cs" />
     <Compile Include="Models\Speler.cs" />
-    <Compile Include="Models\Vakjes\Vak.cs" />
+    <Compile Include="Models\Vakken\Vak.cs" />
     <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

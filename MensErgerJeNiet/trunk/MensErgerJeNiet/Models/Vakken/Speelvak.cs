@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MensErgerJeNiet.Models.Vakjes
 {
-    class Wachtvak : Vak
+    class Speelvak : Vak
     {
 
     }
