@@ -12,7 +12,9 @@ namespace MensErgerJeNiet.Models
 
 		public Bord()
 		{
+			// Eerste vakje alvast maken vóór de loop
 			_beginvak = new Beginvak();
+
 			Vak vorigVak;
 
 			// i = 1 omdat het startvakje hierboven al gemaakt is
