@@ -63,6 +63,7 @@
     <Compile Include="Models\Bord.cs" />
     <Compile Include="Models\Vakjes\Beginvak.cs" />
     <Compile Include="Models\Dobbelsteen.cs" />
+    <Compile Include="Models\Vakjes\Speelvak.cs" />
     <Compile Include="Models\Vakjes\Wachtvak.cs" />
     <Compile Include="Models\Vakjes\Eindvak.cs" />
     <Compile Include="Models\Pion.cs" />
