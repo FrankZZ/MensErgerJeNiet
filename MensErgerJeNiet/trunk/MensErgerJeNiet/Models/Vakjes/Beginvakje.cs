@@ -7,5 +7,6 @@ namespace MensErgerJeNiet.Models.Vakjes
 {
     class Beginvakje : Vakje
     {
+
     }
 }
