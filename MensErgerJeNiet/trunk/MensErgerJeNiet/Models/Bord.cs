@@ -9,6 +9,7 @@ namespace MensErgerJeNiet.Models
     class Bord
     {
 		private Vak _beginvak;
+		private Vak[] _startvakken;
 
 		public Bord()
 		{
@@ -17,6 +18,7 @@ namespace MensErgerJeNiet.Models
 
 			Vak vorigVak;
 
+			int speler = 0;
 			// i = 1 omdat het startvakje hierboven al gemaakt is
 			for (int i = 1; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
 			{
@@ -27,6 +29,7 @@ namespace MensErgerJeNiet.Models
 				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
+					_startvakken[speler] = huidigVak;
 				}
 				else
 				{
@@ -34,7 +37,7 @@ namespace MensErgerJeNiet.Models
 
 					if (modulo == 9)
 					{
-						// Extra methodes voor koppelvak.
+						// Extra methodes voor koppelvak
 					}
 				}
 
