@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Expression.Shapes;
 
-namespace WpfApplication1
+namespace MensErgerJeNiet
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -19,23 +19,23 @@ namespace WpfApplication1
 	public partial class MainWindow : Window
 	{
 		private int _arcCount;
+		private List<Arc> _arcs;
 
 		public MainWindow()
 		{
 			this.InitializeComponent();
+			_arcs = new List<Arc>();
 			_arcCount = 0;
-			// Insert code required on object creation below this point.
 		}
 
 		private void Arc_Initialized(object sender, EventArgs e)
 		{
-			if (_arcCount == 0)
+			if (_arcCount == 1)
 			{
-				Arc obj = (Arc)sender;
-				obj.ArcThickness = 1;
-
+				Arc arc = (Arc)sender;
+				_arcs.Add(arc);
 			}
-			i++;
+			_arcCount++;
 		}
 	}
 }
