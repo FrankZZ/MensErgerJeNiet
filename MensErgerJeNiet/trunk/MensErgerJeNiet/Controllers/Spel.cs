@@ -20,7 +20,7 @@ namespace MensErgerJeNiet.Controller
 
 			for (int i = 0; i < _spelers.Length; i++)
 			{
-				_spelers[i].StartVak = _bord.GetStartVak(i);
+				_spelers[i].Beginvak = _bord.GetStartVak(i);
 			}
 		}
     }

@@ -7,6 +7,17 @@ namespace MensErgerJeNiet.Models.Vakken
 {
     abstract class Vak
     {
-		
+		private Vak _volgende;
+
+		public Vak Volgende
+		{
+			set
+			{
+				if (value != null)
+				{ 
+					_volgende = value;
+				}
+			}
+		}
     }
 }
