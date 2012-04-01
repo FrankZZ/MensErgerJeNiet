@@ -26,10 +26,10 @@ namespace MensErgerJeNiet.Models
 
 			// Eerste vakje alvast maken vóór de loop
 			_eerstevak = new Beginvak();
-			_startvakken[speler] = _eerstevak;
-			speler++;
+			_startvakken[speler++] = _eerstevak;
 
-			Vak vorigVak;
+			// eerste vak is in dit geval de vorige voor de loop
+			Vak vorigVak = _eerstevak;
 
 			
 			// i = 1 omdat het startvakje hierboven al gemaakt is
@@ -53,6 +53,8 @@ namespace MensErgerJeNiet.Models
 						// Extra methodes voor koppelvak
 					}
 				}
+				// Koppel vorige vak aan huidige, linked list
+				vorigVak.Volgende = huidigVak;
 
 				vorigVak = huidigVak;
 			}
