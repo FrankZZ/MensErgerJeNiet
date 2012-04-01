@@ -10,6 +10,7 @@ namespace MensErgerJeNiet.Models
     {
 		private Pion[] _pionnen;
 		private Wachtvak[] _wachtvakken;
+		private Beginvak _beginvak;
 
 		public Pion[] Pionnen
 		{
@@ -19,18 +20,20 @@ namespace MensErgerJeNiet.Models
 			}
 		}
 
-		public Wachtvak[] Wachtvakken
+		public Beginvak Beginvak
 		{
-			get
+			set
 			{
-				return _wachtvakken;
+				if (value != null)
+				{
+					_beginvak = value;
+				}
 			}
 		}
 
 		public Speler()
 		{
 			_pionnen = new Pion[4];
-			_wachtvakken = new Wachtvak[4];
 
 		}
 

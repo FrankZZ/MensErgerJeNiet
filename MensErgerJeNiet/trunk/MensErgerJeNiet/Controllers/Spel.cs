@@ -18,7 +18,10 @@ namespace MensErgerJeNiet.Controller
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];
 
-
+			for (int i = 0; i < _spelers.Length; i++)
+			{
+				_spelers[i].StartVak = _bord.GetStartVak(i);
+			}
 		}
     }
 }
