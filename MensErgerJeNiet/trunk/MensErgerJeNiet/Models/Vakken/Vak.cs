@@ -9,6 +9,8 @@ namespace MensErgerJeNiet.Models.Vakken
     {
 		private Vak _volgende;
 
+		private Pion _pion;
+
 		public Vak Volgende
 		{
 			set
@@ -17,6 +19,19 @@ namespace MensErgerJeNiet.Models.Vakken
 				{ 
 					_volgende = value;
 				}
+			}
+		}
+
+		public Pion Pion
+		{
+			get
+			{
+				return _pion;
+			}
+
+			set
+			{
+				_pion = value;
 			}
 		}
     }

@@ -1,8 +1,6 @@
 ﻿<Window x:Class="MensErgerJeNiet.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Mens Erger Je Niet" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
-    <Grid>
-        
-    </Grid>
+        Title="Mens Erger Je Niet" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Opacity="1" OpacityMask="Red" OverridesDefaultStyle="False" Foreground="#FFF56565" BorderBrush="#FFCE1515" Background="{x:Null}">
+    <Grid></Grid>
 </Window>
