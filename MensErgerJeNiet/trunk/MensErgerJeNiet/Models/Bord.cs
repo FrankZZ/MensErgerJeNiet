@@ -8,26 +8,30 @@ namespace MensErgerJeNiet.Models
 {
     class Bord
     {
-		private Vak _beginvak;
+		private Vak _eerstevak;
 		private Vak[] _startvakken;
 
-		public Vak GetStartVak(int speler)
+		public Beginvak GetStartVak(int speler)
 		{
 			if (speler >= 0 && speler < _startvakken.Length)
 			{
-				return _startvakken[speler];
+				return (Beginvak) _startvakken[speler];
 			}
 			return null;
 		}
 
 		public Bord()
 		{
+			int speler = 0;
+
 			// Eerste vakje alvast maken vóór de loop
-			_beginvak = new Beginvak();
+			_eerstevak = new Beginvak();
+			_startvakken[speler] = _eerstevak;
+			speler++;
 
 			Vak vorigVak;
 
-			int speler = 0;
+			
 			// i = 1 omdat het startvakje hierboven al gemaakt is
 			for (int i = 1; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
 			{
