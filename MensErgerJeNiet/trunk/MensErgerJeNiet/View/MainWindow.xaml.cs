@@ -10,32 +10,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Expression.Shapes;
+using MensErgerJeNiet.View;
 
 namespace MensErgerJeNiet
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
+
 	public partial class MainWindow : Window
 	{
-		private int _arcCount;
-		private List<Arc> _arcs;
+		private List<ArcObserver> _arcs;
+
+		public List<ArcObserver> Arcs
+		{
+			get
+			{
+				return _arcs;
+			}
+		}
 
 		public MainWindow()
 		{
-			_arcs = new List<Arc>();
+			_arcs = new List<ArcObserver>();
 			this.InitializeComponent();
-			_arcCount = 0;
 		}
 
 		private void Arc_Initialized(object sender, EventArgs e)
 		{
-			if (_arcCount == 1)
-			{
-				Arc arc = (Arc)sender;
-				_arcs.Add(arc);
-			}
-			_arcCount++;
+			Arc arc = (Arc)sender;
+			_arcs.Add (new ArcObserver(arc));
 		}
 	}
 }

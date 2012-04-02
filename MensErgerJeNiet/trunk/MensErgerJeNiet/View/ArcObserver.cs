@@ -6,7 +6,7 @@ using Microsoft.Expression.Shapes;
 
 namespace MensErgerJeNiet.View
 {
-	class ArcObserver
+	public class ArcObserver
 	{
 		private Arc _arc;
 
