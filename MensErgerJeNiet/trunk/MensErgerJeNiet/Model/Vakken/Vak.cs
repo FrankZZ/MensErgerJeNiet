@@ -61,6 +61,11 @@ namespace MensErgerJeNiet.Model.Vakken
 			return (_volgende != null);
 		}
 
+		public bool HeeftPion()
+		{
+			return (_pion != null);
+		}
+
 		private void OnChanged()
 		{
 			if (Changed != null)
