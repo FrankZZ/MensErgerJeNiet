@@ -11,6 +11,14 @@ namespace MensErgerJeNiet.Model
 		private Vak _eerstevak;
 		private Vak[] _startvakken;
 
+		public Vak EersteVak
+		{
+			get
+			{
+				return _eerstevak;
+			}
+		}
+
 		public Beginvak GetStartVak(int speler)
 		{
 			if (speler >= 0 && speler < _startvakken.Length)
