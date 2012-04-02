@@ -59,7 +59,7 @@ namespace MensErgerJeNiet.Model
 
 					if (modulo == 9)
 					{
-						// Extra methodes voor koppelvak
+						// TODO Extra methodes voor koppelvak
 					}
 				}
 				// Koppel vorige vak aan huidige, linked list
