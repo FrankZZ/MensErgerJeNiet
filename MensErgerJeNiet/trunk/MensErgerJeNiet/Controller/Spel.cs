@@ -12,6 +12,8 @@ namespace MensErgerJeNiet.Controller
 		private Dobbelsteen _dobbelsteen;
 		private Speler[] _spelers;
 
+		private MainWindow _window;
+
 		public Spel()
 		{
 			_bord = new Bord();
@@ -25,6 +27,12 @@ namespace MensErgerJeNiet.Controller
 				_spelers[i].Beginvak = _bord.GetStartVak(i);
 			}
 
+		}
+
+		private void ShowWindow()
+		{
+			_window = new MainWindow();
+			_window.Show();
 		}
     }
 }

@@ -23,8 +23,8 @@ namespace MensErgerJeNiet
 
 		public MainWindow()
 		{
-			this.InitializeComponent();
 			_arcs = new List<Arc>();
+			this.InitializeComponent();
 			_arcCount = 0;
 		}
 
