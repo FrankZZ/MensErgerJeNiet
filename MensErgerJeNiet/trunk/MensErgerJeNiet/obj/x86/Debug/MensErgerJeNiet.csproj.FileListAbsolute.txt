@@ -1,0 +1,15 @@
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\bin\Debug\MensErgerJeNiet.exe
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\bin\Debug\MensErgerJeNiet.pdb
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\MensErgerJeNiet_MarkupCompile.cache
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\MensErgerJeNiet.g.resources
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\MensErgerJeNiet.Properties.Resources.resources
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\MensErgerJeNiet.exe
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\MensErgerJeNiet.pdb
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\View\MainWindow.baml
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\View\MainWindow.g.cs
+C:\Users\Frank\Documents\Visual Studio 2010\Projects\MensErgerJeNiet\MensErgerJeNiet\obj\x86\Debug\View\App.g.cs
