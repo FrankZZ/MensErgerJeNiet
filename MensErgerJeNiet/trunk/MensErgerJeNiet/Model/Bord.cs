@@ -23,10 +23,12 @@ namespace MensErgerJeNiet.Model
 		public Bord()
 		{
 			int speler = 0;
+			_startvakken = new Vak[4];
 
 			// Eerste vakje alvast maken vóór de loop
 			_eerstevak = new Beginvak();
-			_startvakken[speler++] = _eerstevak;
+			_startvakken[speler] = _eerstevak;
+			speler++;
 
 			// eerste vak is in dit geval de vorige voor de loop
 			Vak vorigVak = _eerstevak;
