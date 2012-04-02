@@ -8,7 +8,6 @@ namespace MensErgerJeNiet.Model.Vakken
     class Beginvak : Vak
     {
 		private Speler _eigenaar;
-		private Kleur _kleur;
 
 		public Speler Eigenaar
 		{
