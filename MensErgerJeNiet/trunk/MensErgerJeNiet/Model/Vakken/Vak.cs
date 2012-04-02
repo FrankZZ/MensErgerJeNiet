@@ -13,6 +13,20 @@ namespace MensErgerJeNiet.Model.Vakken
 
 		private Pion _pion;
 
+		private Kleur _kleur;
+
+		public Kleur Kleur
+		{
+			get
+			{
+				return _kleur;
+			}
+			set
+			{
+				_kleur = value;
+			}
+		}
+
 		public Vak Volgende
 		{
 			set
