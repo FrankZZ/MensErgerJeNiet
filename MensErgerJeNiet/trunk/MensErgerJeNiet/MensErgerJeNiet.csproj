@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Controllers\Spel.cs" />
+    <Compile Include="Models\ChangedEventHandler.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
