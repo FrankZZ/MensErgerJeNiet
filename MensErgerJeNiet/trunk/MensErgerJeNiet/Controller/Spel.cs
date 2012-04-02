@@ -71,6 +71,7 @@ namespace MensErgerJeNiet.Controller
 			while (huidigVak.HeeftVolgende() && huidigVak.Volgende != eersteVak)
 			{
 				huidigVak.Changed += new ChangedEventHandler(arcs[i].update);
+				arcs[i].Vak = huidigVak;
 
 				huidigVak = huidigVak.Volgende;
 				i++;
