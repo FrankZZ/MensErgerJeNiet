@@ -14,6 +14,15 @@ namespace MensErgerJeNiet.View
 	{
 		private Arc _arc;
 		private Brush _kleur;
+		private Vak _vak;
+
+		public Vak Vak
+		{
+			set
+			{
+				_vak = value;
+			}
+		}
 
 		public Observer(Arc arc)
 		{
@@ -45,6 +54,11 @@ namespace MensErgerJeNiet.View
 				_arc.ArcThickness = 20;
 			}
 			_arc.Fill = kleur;
+		}
+
+		public void OnClick()
+		{
+			_vak.OnClick();
 		}
 	}
 }

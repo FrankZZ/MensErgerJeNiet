@@ -61,5 +61,10 @@ namespace MensErgerJeNiet.Model.Vakken
 				Changed(this, new EventArgs());
 			}
 		}
+
+		public void OnClick()
+		{
+
+		}
     }
 }
