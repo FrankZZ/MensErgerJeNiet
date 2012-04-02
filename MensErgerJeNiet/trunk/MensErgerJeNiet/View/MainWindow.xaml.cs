@@ -17,9 +17,9 @@ namespace MensErgerJeNiet
 
 	public partial class MainWindow : Window
 	{
-		private List<ArcObserver> _arcs;
+		private List<Observer> _arcs;
 
-		public List<ArcObserver> Arcs
+		public List<Observer> Arcs
 		{
 			get
 			{
@@ -29,14 +29,14 @@ namespace MensErgerJeNiet
 
 		public MainWindow()
 		{
-			_arcs = new List<ArcObserver>();
+			_arcs = new List<Observer>();
 			this.InitializeComponent();
 		}
 
 		private void Arc_Initialized(object sender, EventArgs e)
 		{
 			Arc arc = (Arc)sender;
-			_arcs.Add (new ArcObserver(arc));
+			_arcs.Add (new Observer(arc));
 		}
 	}
 }

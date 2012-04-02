@@ -49,6 +49,15 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
+		public Wachtvak GetWachtvak(int index)
+		{
+			if (index >= 0 && index < _wachtvakken.Length)
+			{
+				return _wachtvakken[index];
+			}
+			return null;
+		}
+
 		public Beginvak Beginvak
 		{
 			set
@@ -71,11 +80,22 @@ namespace MensErgerJeNiet.Model
 			_beginvak = beginVak;
 
 			_pionnen = new Pion[4];
+			_wachtvakken = new Wachtvak[4];
 
-			for (int i = 0; i < _pionnen.Length; i++)
+			for (int i = 0; i < _pionnen.Length && i < _wachtvakken.Length; i++)
 			{
 				_pionnen[i] = new Pion();
 				_pionnen[i].Eigenaar = this;
+				
+				_wachtvakken[i] = new Wachtvak();
+			}
+		}
+
+		public void SetPionnen()
+		{
+			for (int i = 0; i < _wachtvakken.Length; i++)
+			{
+				_wachtvakken[i].Pion = _pionnen[i];
 			}
 		}
     }

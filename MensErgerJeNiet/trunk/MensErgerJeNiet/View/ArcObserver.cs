@@ -10,12 +10,12 @@ using System.Windows;
 
 namespace MensErgerJeNiet.View
 {
-	public class ArcObserver
+	public class Observer
 	{
 		private Arc _arc;
 		private Brush _kleur;
 
-		public ArcObserver(Arc arc)
+		public Observer(Arc arc)
 		{
 			_arc = arc;
 			_kleur = arc.Fill;

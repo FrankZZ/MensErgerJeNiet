@@ -46,7 +46,10 @@ namespace MensErgerJeNiet.Controller
 
 			ShowWindow();
 
-			_spelers[0].setPion();
+			foreach (Speler s in _spelers)
+			{
+				s.SetPionnen();
+			}
 		}
 
 		private void ShowWindow()
@@ -57,7 +60,7 @@ namespace MensErgerJeNiet.Controller
 		private void AttachView()
 		{
 			//Vak eersteVak = _bord.EersteVak;
-			List<ArcObserver> arcs = _window.Arcs;
+			List<Observer> arcs = _window.Arcs;
 
 			Vak huidigVak = _bord.EersteVak;
 			Vak eersteVak = huidigVak;
@@ -72,7 +75,19 @@ namespace MensErgerJeNiet.Controller
 				huidigVak = huidigVak.Volgende;
 				i++;
 			}
-			MessageBox.Show(i.ToString());
+
+			int speler = -1; // Speler index. -1 omdat (0 % 4) == 0
+
+			for (int j = 40; j < (40 + 16); j++)
+			{
+				int modulo = j % 4;
+
+				if (modulo == 0)
+				{
+					speler++;
+				}
+				_spelers[speler].GetWachtvak(modulo).Changed += new ChangedEventHandler(arcs[j].update);
+			}
 		}
     }
 }

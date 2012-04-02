@@ -68,7 +68,7 @@ namespace MensErgerJeNiet.Model
 
 				vorigVak = huidigVak;
 			}
-			
+
 			// koppel de laatste aan de eerste, zodat pionnen ROND kunnen lopen
 			huidigVak.Volgende = _eerstevak;
 		}
