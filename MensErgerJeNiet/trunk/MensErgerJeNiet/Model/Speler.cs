@@ -27,7 +27,12 @@ namespace MensErgerJeNiet.Model
 				if (value != null)
 				{
 					_beginvak = value;
+					_beginvak.Eigenaar = this;
 				}
+			}
+			get
+			{
+				return _beginvak;
 			}
 		}
 
