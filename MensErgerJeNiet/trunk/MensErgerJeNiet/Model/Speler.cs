@@ -11,9 +11,16 @@ namespace MensErgerJeNiet.Model
 		private Pion[] _pionnen;
 		private Wachtvak[] _wachtvakken;
 		private Beginvak _beginvak;
+		private Kleur _kleur;
+
 		// Spelernummer, één van vier
 		private int _nummer;
 
+		public Kleur Kleur
+		{
+
+		}
+		
 		public int Nummer
 		{
 			get
@@ -54,7 +61,10 @@ namespace MensErgerJeNiet.Model
 		public Speler()
 		{
 			_pionnen = new Pion[4];
-
+			for (int i = 0; i < _pionnen.Length; i++)
+			{
+				_pionnen[i] = new Pion();
+			}
 		}
 
     }
