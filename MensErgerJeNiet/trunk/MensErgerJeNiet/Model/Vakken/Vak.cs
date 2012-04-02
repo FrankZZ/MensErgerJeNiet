@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MensErgerJeNiet.Models.Vakken
+namespace MensErgerJeNiet.Model.Vakken
 {
     abstract class Vak
     {
+		public event ChangedEventHandler Changed;
+
 		private Vak _volgende;
 
 		private Pion _pion;
@@ -32,6 +34,14 @@ namespace MensErgerJeNiet.Models.Vakken
 			set
 			{
 				_pion = value;
+			}
+		}
+
+		private void OnChanged()
+		{
+			if (Changed != null)
+			{
+				Changed(this, new EventArgs());
 			}
 		}
     }

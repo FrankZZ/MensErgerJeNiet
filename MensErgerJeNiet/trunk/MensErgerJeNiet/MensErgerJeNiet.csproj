@@ -52,29 +52,29 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="Views\App.xaml">
+    <ApplicationDefinition Include="View\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Controllers\Spel.cs" />
-    <Compile Include="Models\ChangedEventHandler.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
+    <Compile Include="Controller\Spel.cs" />
+    <Compile Include="Model\ChangedEventHandler.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bord.cs" />
-    <Compile Include="Models\Vakken\Beginvak.cs" />
-    <Compile Include="Models\Dobbelsteen.cs" />
-    <Compile Include="Models\Vakken\Speelvak.cs" />
-    <Compile Include="Models\Vakken\Wachtvak.cs" />
-    <Compile Include="Models\Vakken\Eindvak.cs" />
-    <Compile Include="Models\Pion.cs" />
-    <Compile Include="Models\Speler.cs" />
-    <Compile Include="Models\Vakken\Vak.cs" />
-    <Compile Include="Views\App.xaml.cs">
+    <Compile Include="Model\Bord.cs" />
+    <Compile Include="Model\Vakken\Beginvak.cs" />
+    <Compile Include="Model\Dobbelsteen.cs" />
+    <Compile Include="Model\Vakken\Speelvak.cs" />
+    <Compile Include="Model\Vakken\Wachtvak.cs" />
+    <Compile Include="Model\Vakken\Eindvak.cs" />
+    <Compile Include="Model\Pion.cs" />
+    <Compile Include="Model\Speler.cs" />
+    <Compile Include="Model\Vakken\Vak.cs" />
+    <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
