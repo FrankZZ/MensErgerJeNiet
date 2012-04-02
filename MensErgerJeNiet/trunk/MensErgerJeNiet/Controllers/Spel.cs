@@ -22,6 +22,8 @@ namespace MensErgerJeNiet.Controller
 			{
 				_spelers[i].Beginvak = _bord.GetStartVak(i);
 			}
+
+
 		}
     }
 }
