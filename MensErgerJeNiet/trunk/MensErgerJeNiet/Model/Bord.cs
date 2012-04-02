@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MensErgerJeNiet.Model.Vakken;
+using System.Windows;
 
 namespace MensErgerJeNiet.Model
 {
     class Bord
     {
 		private Vak _eerstevak;
-		private Vak[] _startvakken;
+		private Beginvak[] _startvakken;
 
 		public Vak EersteVak
 		{
@@ -21,9 +22,10 @@ namespace MensErgerJeNiet.Model
 
 		public Beginvak GetStartVak(int positie)
 		{
+			MessageBox.Show(positie.ToString());
 			if (positie >= 0 && positie < _startvakken.Length)
 			{
-				return (Beginvak) _startvakken[positie];
+				return _startvakken[positie];
 			}
 			return null;
 		}
@@ -31,12 +33,11 @@ namespace MensErgerJeNiet.Model
 		public Bord()
 		{
 			int speler = 0;
-			_startvakken = new Vak[4];
+			_startvakken = new Beginvak[4];
 
 			// Eerste vakje alvast maken vóór de loop
 			_eerstevak = new Beginvak();
-			_startvakken[speler] = _eerstevak;
-			speler++;
+			_startvakken[speler++] = (Beginvak)_eerstevak;
 
 			// eerste vak is in dit geval de vorige voor de loop
 			Vak huidigVak = _eerstevak;
@@ -51,7 +52,7 @@ namespace MensErgerJeNiet.Model
 				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
-					_startvakken[speler] = huidigVak;
+					_startvakken[speler++] = (Beginvak) huidigVak;
 				}
 				else
 				{

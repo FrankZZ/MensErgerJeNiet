@@ -6,23 +6,26 @@ using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.Model.Vakken;
 using MensErgerJeNiet.Model;
 using System.Windows.Media;
+using System.Windows;
 
 namespace MensErgerJeNiet.View
 {
 	public class ArcObserver
 	{
 		private Arc _arc;
+		private Brush _kleur;
 
 		public ArcObserver(Arc arc)
 		{
 			_arc = arc;
+			_kleur = arc.Fill;
 		}
 
 		public void update(Object o, EventArgs e)
 		{
 			Vak vak = (Vak) o;
 
-			Brush kleur = Brushes.LightGray;
+			Brush kleur = _kleur;
 
 			if (vak.HeeftPion())
 			{
