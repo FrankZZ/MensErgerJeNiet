@@ -23,6 +23,10 @@ namespace MensErgerJeNiet.Model
 			{
 				return _kleur;
 			}
+			set
+			{
+				_kleur = value;
+			}
 		}
 		
 		public int Nummer
@@ -71,9 +75,8 @@ namespace MensErgerJeNiet.Model
 			for (int i = 0; i < _pionnen.Length; i++)
 			{
 				_pionnen[i] = new Pion();
+				_pionnen[i].Eigenaar = this;
 			}
-			_beginvak.Pion = _pionnen[0];
 		}
-
     }
 }

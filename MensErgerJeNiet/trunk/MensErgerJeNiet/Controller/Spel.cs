@@ -7,6 +7,7 @@ using MensErgerJeNiet.Model.Vakken;
 using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.View;
 using System.Windows;
+using System.Windows.Media;
 
 namespace MensErgerJeNiet.Controller
 {
@@ -23,16 +24,29 @@ namespace MensErgerJeNiet.Controller
 			_window = new MainWindow();
 			_bord = new Bord();
 			
-			AttachView();
-
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];
 
 			for (int i = 0; i < _spelers.Length; i++)
 			{
 				_spelers[i] = new Speler(_bord.GetStartVak(i));
+				Kleur kleur = Kleur.Blauw;
+
+				switch (i)
+				{
+					case 1: kleur = Kleur.Groen; break;
+					case 2: kleur = Kleur.Geel; break;
+					case 3: kleur = Kleur.Rood; break;
+					default: break; // <- blauw
+				}
+				_spelers[i].Kleur = kleur;
 			}
+
+			AttachView();
+
 			ShowWindow();
+
+			_spelers[0].setPion();
 		}
 
 		private void ShowWindow()
