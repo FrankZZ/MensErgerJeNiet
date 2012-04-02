@@ -18,7 +18,10 @@ namespace MensErgerJeNiet.Model
 
 		public Kleur Kleur
 		{
-
+			get
+			{
+				return _kleur;
+			}
 		}
 		
 		public int Nummer

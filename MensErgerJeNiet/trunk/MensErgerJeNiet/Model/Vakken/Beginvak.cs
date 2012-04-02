@@ -8,6 +8,15 @@ namespace MensErgerJeNiet.Model.Vakken
     class Beginvak : Vak
     {
 		private Speler _eigenaar;
+		private Kleur _kleur;
+
+		public Kleur Kleur
+		{
+			get
+			{
+				return _eigenaar.Kleur;
+			}
+		}
 
 		public Speler Eigenaar
 		{
