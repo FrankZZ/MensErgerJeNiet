@@ -37,6 +37,7 @@ namespace MensErgerJeNiet.Model.Vakken
 			set
 			{
 				_pion = value;
+				OnChanged();
 			}
 		}
 
