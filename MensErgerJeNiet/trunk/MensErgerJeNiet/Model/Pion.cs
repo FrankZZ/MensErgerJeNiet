@@ -8,20 +8,28 @@ namespace MensErgerJeNiet.Model
 {
 	class Pion
     {
-		private Kleur _kleur;
 
 		private Vak _vak;
+
+		private Speler _eigenaar;
+
+		public Speler Eigenaar
+		{
+			get
+			{
+				return _eigenaar;
+			}
+			set
+			{
+				_eigenaar = value;
+			}
+		}
 
 		public Kleur Kleur
 		{
 			get
 			{
-				return _kleur;
-			}
-
-			set
-			{
-				_kleur = value;
+				return _eigenaar.Kleur;
 			}
 		}
 
