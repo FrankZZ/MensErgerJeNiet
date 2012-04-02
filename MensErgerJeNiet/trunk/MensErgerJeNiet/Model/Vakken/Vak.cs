@@ -13,20 +13,6 @@ namespace MensErgerJeNiet.Model.Vakken
 
 		private Pion _pion;
 
-		private Kleur _kleur;
-
-		public Kleur Kleur
-		{
-			get
-			{
-				return _kleur;
-			}
-			set
-			{
-				_kleur = value;
-			}
-		}
-
 		public Vak Volgende
 		{
 			set
@@ -36,7 +22,6 @@ namespace MensErgerJeNiet.Model.Vakken
 					_volgende = value;
 				}
 			}
-
 			get
 			{
 				return _volgende;
@@ -49,7 +34,6 @@ namespace MensErgerJeNiet.Model.Vakken
 			{
 				return _pion;
 			}
-
 			set
 			{
 				_pion = value;
