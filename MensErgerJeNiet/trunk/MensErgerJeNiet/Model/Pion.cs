@@ -6,15 +6,7 @@ using MensErgerJeNiet.Model.Vakken;
 
 namespace MensErgerJeNiet.Model
 {
-	enum Kleur
-	{
-		Rood,
-		Blauw,
-		Groen,
-		Geel
-	}
-
-    class Pion
+	class Pion
     {
 		private Kleur _kleur;
 
