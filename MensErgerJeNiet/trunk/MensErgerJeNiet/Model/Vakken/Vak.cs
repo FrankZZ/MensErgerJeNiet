@@ -22,6 +22,11 @@ namespace MensErgerJeNiet.Model.Vakken
 					_volgende = value;
 				}
 			}
+
+			get
+			{
+				return _volgende;
+			}
 		}
 
 		public Pion Pion
@@ -35,6 +40,11 @@ namespace MensErgerJeNiet.Model.Vakken
 			{
 				_pion = value;
 			}
+		}
+
+		public bool HeeftVolgende()
+		{
+			return (_volgende != null);
 		}
 
 		private void OnChanged()

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MensErgerJeNiet.Model;
+using MensErgerJeNiet.Model.Vakken;
+using Microsoft.Expression.Shapes;
+using MensErgerJeNiet.View;
+using System.Windows;
 
 namespace MensErgerJeNiet.Controller
 {
@@ -16,6 +20,7 @@ namespace MensErgerJeNiet.Controller
 
 		public Spel()
 		{
+			_window = new MainWindow();
 			_bord = new Bord();
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];
@@ -27,18 +32,33 @@ namespace MensErgerJeNiet.Controller
 				_spelers[i].Beginvak = _bord.GetStartVak(i);
 			}
 			ShowWindow();
+			AttachView();
 		}
 
 		private void ShowWindow()
 		{
-			_window = new MainWindow();
 			_window.Show();
 		}
 
 		private void AttachView()
 		{
-			for (int i = 0; i<
-			new ChangedEventHandler(.update);
+			//Vak eersteVak = _bord.EersteVak;
+			List<ArcObserver> arcs = _window.Arcs;
+
+			Vak huidigVak = _bord.EersteVak;
+			Vak eersteVak = huidigVak;
+			int i = 0;
+
+			// heeft huidigVak een volgende? (linkedlist) && volgendvak NIET eerste? Anders zijn we al rond
+
+			while (huidigVak.HeeftVolgende() && huidigVak.Volgende != eersteVak)
+			{
+				huidigVak.Changed += new ChangedEventHandler(arcs[i].update);
+
+				huidigVak = huidigVak.Volgende;
+				i++;
+			}
+			// laatste vak koppelen aan eerste
 		}
     }
 }
