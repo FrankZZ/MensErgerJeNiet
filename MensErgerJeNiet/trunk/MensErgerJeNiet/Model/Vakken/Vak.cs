@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace MensErgerJeNiet.Model.Vakken
 {
@@ -53,8 +54,10 @@ namespace MensErgerJeNiet.Model.Vakken
 
 		private void OnChanged()
 		{
+			MessageBox.Show("onChanged before nullcheck");
 			if (Changed != null)
 			{
+				MessageBox.Show("onChanged after nullcheck");
 				Changed(this, new EventArgs());
 			}
 		}

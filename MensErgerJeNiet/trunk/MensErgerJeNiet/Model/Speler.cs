@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MensErgerJeNiet.Model.Vakken;
+using System.Windows;
 
 namespace MensErgerJeNiet.Model
 {
@@ -61,13 +62,17 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Speler()
+		public Speler(Beginvak beginVak)
 		{
+			_beginvak = beginVak;
+
 			_pionnen = new Pion[4];
+
 			for (int i = 0; i < _pionnen.Length; i++)
 			{
 				_pionnen[i] = new Pion();
 			}
+			_beginvak.Pion = _pionnen[0];
 		}
 
     }

@@ -22,17 +22,17 @@ namespace MensErgerJeNiet.Controller
 		{
 			_window = new MainWindow();
 			_bord = new Bord();
+			
+			AttachView();
+
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];
 
 			for (int i = 0; i < _spelers.Length; i++)
 			{
-				_spelers[i] = new Speler();
-
-				_spelers[i].Beginvak = _bord.GetStartVak(i);
+				_spelers[i] = new Speler(_bord.GetStartVak(i));
 			}
 			ShowWindow();
-			AttachView();
 		}
 
 		private void ShowWindow()
@@ -58,7 +58,7 @@ namespace MensErgerJeNiet.Controller
 				huidigVak = huidigVak.Volgende;
 				i++;
 			}
-			// laatste vak koppelen aan eerste
+			MessageBox.Show(i.ToString());
 		}
     }
 }
