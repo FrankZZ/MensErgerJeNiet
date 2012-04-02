@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MensErgerJeNiet.Models.Vakken;
+using MensErgerJeNiet.Model.Vakken;
 
-namespace MensErgerJeNiet.Models
+namespace MensErgerJeNiet.Model
 {
     class Bord
     {

@@ -4,11 +4,15 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows;
+using MensErgerJeNiet.Controller;
 
 namespace MensErgerJeNiet
 {
 	public partial class App : Application
 	{
-        /* Deze laten we leeg! */
+		public App()
+		{
+			new Spel();
+		}
 	}
 }
