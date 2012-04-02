@@ -51,6 +51,7 @@ namespace MensErgerJeNiet.Model
 				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
+					huidigVak.Eigenaar = 
 					_startvakken[speler] = huidigVak;
 				}
 				else
