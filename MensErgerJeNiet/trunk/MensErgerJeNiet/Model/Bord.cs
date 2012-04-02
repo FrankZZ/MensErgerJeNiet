@@ -57,7 +57,7 @@ namespace MensErgerJeNiet.Model
 				{
 					huidigVak = new Speelvak();
 
-					if (modulo == 9)
+					if (modulo == 9) // Koppelvakje
 					{
 						// TODO: Extra methodes voor koppelvak
 					}
