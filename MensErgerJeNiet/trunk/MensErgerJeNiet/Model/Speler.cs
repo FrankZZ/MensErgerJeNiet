@@ -11,6 +11,20 @@ namespace MensErgerJeNiet.Model
 		private Pion[] _pionnen;
 		private Wachtvak[] _wachtvakken;
 		private Beginvak _beginvak;
+		// Spelernummer, één van vier
+		private int _nummer;
+
+		public int Nummer
+		{
+			get
+			{
+				return _nummer;
+			}
+			set
+			{
+				_nummer = value;
+			}
+		}
 
 		public Pion[] Pionnen
 		{
@@ -27,6 +41,7 @@ namespace MensErgerJeNiet.Model
 				if (value != null)
 				{
 					_beginvak = value;
+					// Eigenaar toekennen aan beginvakje
 					_beginvak.Eigenaar = this;
 				}
 			}

@@ -19,11 +19,11 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Beginvak GetStartVak(int speler)
+		public Beginvak GetStartVak(int positie)
 		{
-			if (speler >= 0 && speler < _startvakken.Length)
+			if (positie >= 0 && positie < _startvakken.Length)
 			{
-				return (Beginvak) _startvakken[speler];
+				return (Beginvak) _startvakken[positie];
 			}
 			return null;
 		}
@@ -51,7 +51,6 @@ namespace MensErgerJeNiet.Model
 				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
-					((Beginvak) huidigVak).Eigenaar = 
 					_startvakken[speler] = huidigVak;
 				}
 				else
