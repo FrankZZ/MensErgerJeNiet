@@ -22,7 +22,6 @@ namespace MensErgerJeNiet.Model
 
 		public Beginvak GetStartVak(int positie)
 		{
-			MessageBox.Show(positie.ToString());
 			if (positie >= 0 && positie < _startvakken.Length)
 			{
 				return _startvakken[positie];

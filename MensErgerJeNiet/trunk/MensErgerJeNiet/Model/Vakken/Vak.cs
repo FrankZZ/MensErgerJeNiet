@@ -57,7 +57,7 @@ namespace MensErgerJeNiet.Model.Vakken
 			//MessageBox.Show("onChanged before nullcheck");
 			if (Changed != null)
 			{
-				MessageBox.Show("onChanged after nullcheck");
+				//MessageBox.Show("onChanged after nullcheck");
 				Changed(this, new EventArgs());
 			}
 		}
