@@ -57,7 +57,10 @@ namespace MensErgerJeNiet.Model
 
 		public void hit()
 		{
-			_eigenaar.Beginvak.Pion = this;
+			// Terug naar eerste beschikbare wachtvak
+			_vak = _eigenaar.Wachtvak;
+			
+			_vak.Pion = this;
 		}
     }
 }
