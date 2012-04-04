@@ -7,8 +7,8 @@ using System.Windows;
 
 namespace MensErgerJeNiet.Model
 {
-    class Bord
-    {
+	public class Bord
+	{
 		private Vak _eerstevak;
 		private Beginvak[] _startvakken;
 
@@ -71,5 +71,5 @@ namespace MensErgerJeNiet.Model
 			// koppel de laatste aan de eerste, zodat pionnen ROND kunnen lopen
 			huidigVak.Volgende = _eerstevak;
 		}
-    }
+	}
 }

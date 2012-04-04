@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace MensErgerJeNiet.Model
 {
-	class Pion
+	public class Pion
     {
 		private Vak _vak;
 
@@ -46,7 +46,7 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public void move(int steps)
+		public void move(int steps = 1)
 		{
 			if (_vak.Volgende.Pion != null)
 			{

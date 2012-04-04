@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MensErgerJeNiet.Model
 {
-	enum Kleur
+	public enum Kleur
 	{
 		Blauw = 1,
 		Groen = 2,
@@ -13,3 +13,4 @@ namespace MensErgerJeNiet.Model
 		Rood = 4
 	}
 }
+

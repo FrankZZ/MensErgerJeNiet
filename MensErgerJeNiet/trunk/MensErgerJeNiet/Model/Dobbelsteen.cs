@@ -5,13 +5,13 @@ using System.Text;
 
 namespace MensErgerJeNiet.Model
 {
-    class Dobbelsteen
-    {
+	public class Dobbelsteen
+	{
 		static Random _randomizer = new Random();
 
 		public int Gooi(int min, int max)
 		{
 			return _randomizer.Next(min, max);
 		}
-    }
+	}
 }
