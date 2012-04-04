@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MensErgerJeNiet.Model
+namespace MensErgerJeNiet.Shared
 {
 	public delegate void ChangedEventHandler(object sender, EventArgs e);
 }

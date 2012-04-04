@@ -9,9 +9,9 @@ namespace MensErgerJeNiet.Model
 	{
 		static Random _randomizer = new Random();
 
-		public int Gooi(int min, int max)
+		public int Gooi()
 		{
-			return _randomizer.Next(min, max);
+			return _randomizer.Next(1, (6 + 1));
 		}
 	}
 }
