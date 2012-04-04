@@ -50,11 +50,10 @@ namespace MensErgerJeNiet.Model
 		{
 			if (_vak.Volgende.Pion != null)
 			{
-				for (int i = 0; i < steps; i++)
-				{
-					_vak.Volgende.Pion = this;
-				}
+				Vak vak = _vak;
+				for (int i = 0; i < steps; i++) vak = vak.Volgende;
 
+				vak.Pion = this;
 				_vak.Pion = null;
 			}
 		}
