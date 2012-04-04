@@ -87,7 +87,9 @@ namespace MensErgerJeNiet.Controller
 				{
 					speler++;
 				}
-				_spelers[speler].GetWachtvak(modulo).Changed += new ChangedEventHandler(arcs[j].update);
+				huidigVak = _spelers[speler].GetWachtvak(modulo);
+				huidigVak.Changed += new ChangedEventHandler(arcs[j].update);
+				arcs[j].Vak = huidigVak;
 			}
 		}
     }
