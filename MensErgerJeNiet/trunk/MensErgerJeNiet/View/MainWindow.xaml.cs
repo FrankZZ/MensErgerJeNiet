@@ -47,7 +47,7 @@ namespace MensErgerJeNiet
 
 		private void Arc_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			
+			MessageBox.Show("KK");
 		}
 	}
 }
