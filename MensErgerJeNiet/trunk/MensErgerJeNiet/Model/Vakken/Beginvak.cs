@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MensErgerJeNiet.Model.Vakken
 {
-    class Beginvak : Vak
+    public class Beginvak : Vak
     {
 		private Speler _eigenaar;
 
