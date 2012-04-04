@@ -98,7 +98,9 @@ namespace MensErgerJeNiet.Controller
 
 		public void update(object sender, EventArgs e)
 		{
-			MessageBox.Show(_dobbelsteen.Gooi().ToString());
+			int waarde = _dobbelsteen.Gooi();
+
+			_spelers[0].Pionnen[0].move(waarde);
 		}
     }
 }

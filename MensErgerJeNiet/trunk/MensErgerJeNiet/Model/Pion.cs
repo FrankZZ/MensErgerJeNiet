@@ -43,6 +43,9 @@ namespace MensErgerJeNiet.Model
 			set
 			{
 				_vak = value;
+/*				// Onszelf op het vakje zetten
+				value.Pion = this;
+ */
 			}
 		}
 
@@ -52,7 +55,10 @@ namespace MensErgerJeNiet.Model
 			for (int i = 0; i < steps; i++) vak = vak.Volgende;
 
 			vak.Pion = this; //geslagen, oude replaced.
+			
 			_vak.Pion = null;
+			
+			_vak = vak;
 		}
 
 		public void hit()
