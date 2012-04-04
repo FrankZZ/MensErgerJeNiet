@@ -61,7 +61,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Controller\Spel.cs" />
-    <Compile Include="Model\ChangedEventHandler.cs" />
+    <Compile Include="Shared\ChangedEventHandler.cs" />
     <Compile Include="Model\Kleur.cs" />
     <Compile Include="View\ArcObserver.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
