@@ -48,14 +48,16 @@ namespace MensErgerJeNiet.Model
 
 		public void move(int steps = 1)
 		{
-			if (_vak.Volgende.Pion != null)
-			{
-				Vak vak = _vak;
-				for (int i = 0; i < steps; i++) vak = vak.Volgende;
+			Vak vak = _vak;
+			for (int i = 0; i < steps; i++) vak = vak.Volgende;
 
-				vak.Pion = this;
-				_vak.Pion = null;
-			}
+			vak.Pion = this; //geslagen, oude replaced.
+			_vak.Pion = null;
+		}
+
+		public void hit()
+		{
+			_eigenaar.Beginvak.Pion = this;
 		}
     }
 }

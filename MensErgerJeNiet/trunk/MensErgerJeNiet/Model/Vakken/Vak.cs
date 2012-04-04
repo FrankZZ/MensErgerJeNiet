@@ -37,6 +37,10 @@ namespace MensErgerJeNiet.Model.Vakken
 			}
 			set
 			{
+				if (HeeftPion() && value != null)
+				{
+					_pion.
+				}
 				_pion = value;
 				OnChanged();
 			}

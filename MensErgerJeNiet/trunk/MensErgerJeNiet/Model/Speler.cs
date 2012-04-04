@@ -58,6 +58,23 @@ namespace MensErgerJeNiet.Model
 			return null;
 		}
 
+		//return eerste lege wachtvak, alles vol = null
+		public Wachtvak Wachtvak
+		{
+			get
+			{
+				for (int i = 0; i < _wachtvakken.Length; i++)
+				{
+					if (!_wachtvakken[i].HeeftPion())
+					{
+						return _wachtvakken[i];
+					}
+				}
+
+				return null;
+			}
+		}
+
 		public Beginvak Beginvak
 		{
 			set
