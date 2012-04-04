@@ -39,7 +39,8 @@ namespace MensErgerJeNiet.Model.Vakken
 			{
 				if (HeeftPion() && value != null)
 				{
-					_pion.
+					// Pion staat er al, andere komt erop, hit dus.
+					_pion.hit();
 				}
 				_pion = value;
 				OnChanged();
