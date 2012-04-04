@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace MensErgerJeNiet.Model.Vakken
 {
-    abstract class Vak
+    public abstract class Vak
     {
 		public event ChangedEventHandler Changed;
 

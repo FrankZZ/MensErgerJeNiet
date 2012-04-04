@@ -5,8 +5,8 @@ using System.Text;
 
 namespace MensErgerJeNiet.Model.Vakken
 {
-    class Eindvak : Vak
-    {
+	public class Eindvak : Vak
+	{
 
-    }
+	}
 }

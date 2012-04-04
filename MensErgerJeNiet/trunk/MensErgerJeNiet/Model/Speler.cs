@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace MensErgerJeNiet.Model
 {
-    class Speler
+    public class Speler
     {
 		private Pion[] _pionnen;
 		private Wachtvak[] _wachtvakken;
