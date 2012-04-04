@@ -49,5 +49,10 @@ namespace MensErgerJeNiet
 		{
 			_observers[(Arc)sender].OnClick();
 		}
+
+		private void DiceButton_Click(object sender, RoutedEventArgs e)
+		{
+			
+		}
 	}
 }
