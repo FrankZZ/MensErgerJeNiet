@@ -105,6 +105,7 @@ namespace MensErgerJeNiet.Model
 				_pionnen[i].Eigenaar = this;
 				
 				_wachtvakken[i] = new Wachtvak();
+				_wachtvakken[i].Volgende = _beginvak;
 			}
 		}
 
@@ -113,6 +114,7 @@ namespace MensErgerJeNiet.Model
 			for (int i = 0; i < _wachtvakken.Length; i++)
 			{
 				_wachtvakken[i].Pion = _pionnen[i];
+				_pionnen[i].Vak = _wachtvakken[i];
 			}
 		}
     }
