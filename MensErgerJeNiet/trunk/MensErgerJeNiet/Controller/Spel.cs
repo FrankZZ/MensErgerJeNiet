@@ -8,6 +8,7 @@ using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.View;
 using System.Windows;
 using System.Windows.Media;
+using MensErgerJeNiet.Shared;
 
 namespace MensErgerJeNiet.Controller
 {
@@ -59,6 +60,8 @@ namespace MensErgerJeNiet.Controller
 
 		private void AttachView()
 		{
+			_window.Changed += new ChangedEventHandler(this.update);
+
 			//Vak eersteVak = _bord.EersteVak;
 			List<Observer> arcs = _window.Arcs;
 
@@ -91,6 +94,11 @@ namespace MensErgerJeNiet.Controller
 				huidigVak.Changed += new ChangedEventHandler(arcs[j].update);
 				arcs[j].Vak = huidigVak;
 			}
+		}
+
+		public void update(object sender, EventArgs e)
+		{
+			MessageBox.Show(_dobbelsteen.Gooi().ToString());
 		}
     }
 }

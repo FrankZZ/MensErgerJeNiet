@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.View;
+using MensErgerJeNiet.Shared;
 
 namespace MensErgerJeNiet
 {
@@ -19,6 +20,8 @@ namespace MensErgerJeNiet
 	{
 		private List<Observer> _arcs;
 		private Dictionary<Arc,Observer> _observers;
+		
+		public ChangedEventHandler Changed;
 
 		public List<Observer> Arcs
 		{
@@ -52,7 +55,17 @@ namespace MensErgerJeNiet
 
 		private void DiceButton_Click(object sender, RoutedEventArgs e)
 		{
-			
+			OnChanged();
+		}
+
+		private void OnChanged()
+		{
+			//MessageBox.Show("onChanged before nullcheck");
+			if (Changed != null)
+			{
+				//MessageBox.Show("onChanged after nullcheck");
+				Changed(this, new EventArgs());
+			}
 		}
 	}
 }
