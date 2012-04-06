@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.View;
 using MensErgerJeNiet.Shared;
+using MensErgerJeNiet.Model;
 
 namespace MensErgerJeNiet
 {
@@ -60,17 +61,15 @@ namespace MensErgerJeNiet
 
 		private void OnChanged()
 		{
-			//MessageBox.Show("onChanged before nullcheck");
 			if (Changed != null)
 			{
-				//MessageBox.Show("onChanged after nullcheck");
 				Changed(this, new EventArgs());
 			}
 		}
 
 		public void updateFromSpeler(object sender, EventArgs e)
 		{
-
+			MessageBox.Show(((Speler) sender).ToString());
 		}
 	}
 }

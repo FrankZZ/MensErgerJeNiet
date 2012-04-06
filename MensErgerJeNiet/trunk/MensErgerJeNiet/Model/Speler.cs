@@ -123,7 +123,7 @@ namespace MensErgerJeNiet.Model
 
 		public void doTurn(int steps)
 		{
-
+			OnChanged();
 		}
 
 		private void OnChanged()
