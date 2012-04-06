@@ -30,7 +30,7 @@ namespace MensErgerJeNiet.Controller
 
 			for (int i = 0; i < _spelers.Length; i++)
 			{
-				_spelers[i] = new Speler(_bord.GetStartVak(i));
+				_spelers[i] = new Speler(_bord.GetStartVak(i), "Speler " + (i + 1));
 				SpelerKleur kleur = SpelerKleur.Blauw;
 
 				switch (i)
@@ -129,7 +129,37 @@ namespace MensErgerJeNiet.Controller
 
 		private void VakClick(Vak vak)
 		{
-			vak.OnClick();
+			if (vak.HeeftPion())
+			{
+				Pion pion = vak.Pion;
+				Speler eigenaar = pion.Eigenaar;
+
+				if (eigenaar.Status == SpelerStatus.WachtOpPion)
+				{
+					eigenaar.onClickPion(pion);
+
+					if (eigenaar.Status == SpelerStatus.Uit)
+					{
+						MessageBox.Show("Gewonnen!");
+					}
+					else if (eigenaar.Status == SpelerStatus.WachtOpBeurt)
+					{
+						for (int i = 0; i < _spelers.Length - 1; i++)
+						{
+							Speler speler = _spelers[i];
+
+							if (speler == eigenaar)
+							{
+								_spelers[(i + 1)].Status = SpelerStatus.WachtOpDobbelsteen;
+								// Stop, want we hebben de beurt al doorgegeven
+								return;
+							}
+						}
+						// Speler 4 [3] is huidige speler, terug naar 1 [0]
+						_spelers[0].Status = SpelerStatus.WachtOpDobbelsteen;
+					}
+				}
+			}
 		}
     }
 }

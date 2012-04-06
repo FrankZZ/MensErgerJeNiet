@@ -67,13 +67,5 @@ namespace MensErgerJeNiet.Model.Vakken
 				Changed(this, new EventArgs());
 			}
 		}
-
-		public void OnClick()
-		{
-			if (HeeftPion())
-			{
-				_pion.onClick();
-			}
-		}
     }
 }

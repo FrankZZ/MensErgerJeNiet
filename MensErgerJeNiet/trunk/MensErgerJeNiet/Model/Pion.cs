@@ -74,7 +74,7 @@ namespace MensErgerJeNiet.Model
 
 		public void onClick()
 		{
-			_eigenaar.onClickPion(this);
+			
 		}
     }
 }
