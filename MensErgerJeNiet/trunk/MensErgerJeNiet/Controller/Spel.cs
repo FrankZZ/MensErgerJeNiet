@@ -18,10 +18,13 @@ namespace MensErgerJeNiet.Controller
 		private Dobbelsteen _dobbelsteen;
 		private Speler[] _spelers;
 
+		private int _speler;
+
 		private MainWindow _window;
 
 		public Spel()
 		{
+			_speler = 0;
 			_window = new MainWindow();
 			_bord = new Bord();
 			
@@ -31,6 +34,12 @@ namespace MensErgerJeNiet.Controller
 			for (int i = 0; i < _spelers.Length; i++)
 			{
 				_spelers[i] = new Speler(_bord.GetStartVak(i), "Speler " + (i + 1));
+				
+				if (i > 0)
+				{
+					_spelers[i - 1].Volgende = _spelers[i];
+				}
+
 				SpelerKleur kleur = SpelerKleur.Blauw;
 
 				switch (i)
@@ -42,6 +51,8 @@ namespace MensErgerJeNiet.Controller
 				}
 				_spelers[i].Kleur = kleur;
 			}
+			// laatste met eerste verbinden
+			_spelers[_spelers.Length - 1].Volgende = _spelers[0];
 
 			AttachView();
 
@@ -124,7 +135,7 @@ namespace MensErgerJeNiet.Controller
 
 		private void RollDice()
 		{
-			_spelers[0].ValueDiced = _dobbelsteen.Gooi();
+			_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
 		}
 
 		private void VakClick(Vak vak)
@@ -144,19 +155,26 @@ namespace MensErgerJeNiet.Controller
 					}
 					else if (eigenaar.Status == SpelerStatus.WachtOpBeurt)
 					{
-						for (int i = 0; i < _spelers.Length - 1; i++)
+						Speler speler = eigenaar;
+						int countSpelers = 0;
+						while (speler.Volgende != eigenaar)
 						{
-							Speler speler = _spelers[i];
-
-							if (speler == eigenaar)
+							countSpelers++;
+							if (speler.Volgende.Status != SpelerStatus.Uit)
 							{
-								_spelers[(i + 1)].Status = SpelerStatus.WachtOpDobbelsteen;
-								// Stop, want we hebben de beurt al doorgegeven
-								return;
+								speler.Volgende.Status = SpelerStatus.WachtOpDobbelsteen;
+								break;
 							}
+							speler = speler.Volgende;
 						}
-						// Speler 4 [3] is huidige speler, terug naar 1 [0]
-						_spelers[0].Status = SpelerStatus.WachtOpDobbelsteen;
+						if (speler.Volgende.Status == SpelerStatus.Uit)
+							MessageBox.Show(eigenaar.ToString() + " is als laatste over!");
+						else
+						{
+							_speler += countSpelers;
+							_speler = _speler % 4;
+						}
+
 					}
 				}
 			}

@@ -17,11 +17,25 @@ namespace MensErgerJeNiet.Model
 		private Beginvak _beginvak;
 		private SpelerKleur _kleur;
 
+		private Speler _volgende;
+
 		private String _naam;
 
 		private SpelerStatus _status;
 
 		private int _valueDiced;
+
+		public Speler Volgende
+		{
+			set
+			{
+				_volgende = value;
+			}
+			get
+			{
+				return _volgende;
+			}
+		}
 
 		public int ValueDiced
 		{
