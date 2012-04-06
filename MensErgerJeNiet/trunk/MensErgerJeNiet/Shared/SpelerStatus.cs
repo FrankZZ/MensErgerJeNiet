@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MensErgerJeNiet.Model
+namespace MensErgerJeNiet.Shared
 {
-	public enum Kleur
+	public enum SpelerStatus
 	{
-		Blauw = 1,
-		Groen = 2,
-		Geel = 3,
-		Rood = 4
+
 	}
 }
-
