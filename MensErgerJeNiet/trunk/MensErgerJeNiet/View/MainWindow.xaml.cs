@@ -13,6 +13,7 @@ using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.View;
 using MensErgerJeNiet.Shared;
 using MensErgerJeNiet.Model;
+using MensErgerJeNiet.Model.Vakken;
 
 namespace MensErgerJeNiet
 {
@@ -51,20 +52,27 @@ namespace MensErgerJeNiet
 
 		private void Arc_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			_observers[(Arc)sender].OnClick();
-			MessageBox.Show("actie uitgevoerd, evt. volgende speler");
+			OnChanged(ViewEvents.VakClick, _observers[(Arc)sender].Vak);
 		}
 
 		private void DiceButton_Click(object sender, RoutedEventArgs e)
 		{
-			OnChanged();
+			OnChanged(ViewEvents.DiceClick);
 		}
 
-		private void OnChanged()
+		private void OnChanged(ViewEvents evt)
 		{
 			if (Changed != null)
 			{
-				Changed(this, new EventArgs());
+				Changed(this, new EventArgs<ViewEvents>(evt));
+			}
+		}
+
+		private void OnChanged(ViewEvents evt, Vak vak)
+		{
+			if (Changed != null)
+			{
+				Changed(this, new EventArgs<ViewEvents, Vak>(evt, vak));
 			}
 		}
 

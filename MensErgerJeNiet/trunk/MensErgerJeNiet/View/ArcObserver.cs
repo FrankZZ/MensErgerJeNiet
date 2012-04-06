@@ -25,6 +25,11 @@ namespace MensErgerJeNiet.View
 			{
 				_vak = value;
 			}
+
+			get
+			{
+				return _vak;
+			}
 		}
 
 		public ArcObserver(Arc arc)
