@@ -27,7 +27,7 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Kleur Kleur
+		public SpelerKleur Kleur
 		{
 			get
 			{

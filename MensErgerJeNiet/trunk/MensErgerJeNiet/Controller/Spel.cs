@@ -31,13 +31,13 @@ namespace MensErgerJeNiet.Controller
 			for (int i = 0; i < _spelers.Length; i++)
 			{
 				_spelers[i] = new Speler(_bord.GetStartVak(i));
-				Kleur kleur = Kleur.Blauw;
+				SpelerKleur kleur = SpelerKleur.Blauw;
 
 				switch (i)
 				{
-					case 1: kleur = Kleur.Groen; break;
-					case 2: kleur = Kleur.Geel; break;
-					case 3: kleur = Kleur.Rood; break;
+					case 1: kleur = SpelerKleur.Groen; break;
+					case 2: kleur = SpelerKleur.Geel; break;
+					case 3: kleur = SpelerKleur.Rood; break;
 					default: break; // <- blauw
 				}
 				_spelers[i].Kleur = kleur;

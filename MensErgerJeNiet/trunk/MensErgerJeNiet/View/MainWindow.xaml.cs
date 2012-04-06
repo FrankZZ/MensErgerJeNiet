@@ -70,7 +70,7 @@ namespace MensErgerJeNiet
 		public void updateFromSpeler(object sender, EventArgs e)
 		{
 
-			MessageBox.Show(((Speler) sender)..ToString());
+			MessageBox.Show(((Speler) sender).Status.ToString());
 		}
 	}
 }

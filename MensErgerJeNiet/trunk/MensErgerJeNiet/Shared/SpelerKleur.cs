@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MensErgerJeNiet.Shared
 {
-	public enum Kleur
+	public enum SpelerKleur
 	{
 		Blauw = 1,
 		Groen = 2,
@@ -13,4 +13,3 @@ namespace MensErgerJeNiet.Shared
 		Rood = 4
 	}
 }
-

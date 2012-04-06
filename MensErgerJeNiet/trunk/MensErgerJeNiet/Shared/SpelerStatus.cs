@@ -7,6 +7,8 @@ namespace MensErgerJeNiet.Shared
 {
 	public enum SpelerStatus
 	{
-
+		WachtOpBeurt,
+		WachtOpDobbelsteen,
+		WachtOpPion
 	}
 }
