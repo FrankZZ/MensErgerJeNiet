@@ -89,7 +89,7 @@ namespace MensErgerJeNiet.Controller
 			Vak huidigVak = _bord.EersteVak;
 			Vak eersteVak = huidigVak;
 			int i = 0;
-			int eindVakCount = 56;
+			int eindVakCount = 55;
 
 			// heeft huidigVak een volgende? (linkedlist) && volgendvak NIET eerste? Anders zijn we al rond
 
@@ -99,7 +99,7 @@ namespace MensErgerJeNiet.Controller
 				{
 					Eindvak huidigEindvak = ((Koppelvak)huidigVak).Eindvak;
 
-					for (int j = 0; j < 4; j++)
+					for (int j = 1; j <= 4; j++)
 					{
 						int idx = eindVakCount + j;
 						huidigEindvak.Changed += new ChangedEventHandler(arcs[idx].updateFromVak);
@@ -153,7 +153,7 @@ namespace MensErgerJeNiet.Controller
 		private void RollDice()
 		{
 			//_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
-			_spelers[_speler].ValueDiced = 6;
+			_spelers[_speler].ValueDiced = 41;
 		}
 
 		private void VakClick(Vak vak)
