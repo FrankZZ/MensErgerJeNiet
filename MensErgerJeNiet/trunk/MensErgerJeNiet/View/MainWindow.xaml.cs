@@ -69,6 +69,12 @@ namespace MensErgerJeNiet
 
 		public void updateFromSpeler(object sender, EventArgs e)
 		{
+			Speler speler = (Speler)sender;
+
+			if (speler.Status == SpelerStatus.WachtOpPion)
+			{
+				txtStatus.Text = "Kies één van uw pionnen om " + speler.ValueDiced + " plekken te verzetten.";
+			}
 
 			MessageBox.Show(((Speler) sender).Status.ToString());
 		}

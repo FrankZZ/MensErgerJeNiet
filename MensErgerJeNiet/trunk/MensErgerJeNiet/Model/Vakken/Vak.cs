@@ -70,7 +70,10 @@ namespace MensErgerJeNiet.Model.Vakken
 
 		public void OnClick()
 		{
-			MessageBox.Show(":)"); // :)
+			if (HeeftPion())
+			{
+				_pion.onClick();
+			}
 		}
     }
 }

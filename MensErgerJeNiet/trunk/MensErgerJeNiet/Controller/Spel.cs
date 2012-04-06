@@ -106,9 +106,7 @@ namespace MensErgerJeNiet.Controller
 
 		public void updateFromView(object sender, EventArgs e)
 		{
-			int waarde = _dobbelsteen.Gooi();
-
-			_spelers[0].SetDicedValue(waarde);
+			_spelers[0].ValueDiced = _dobbelsteen.Gooi();
 		}
     }
 }

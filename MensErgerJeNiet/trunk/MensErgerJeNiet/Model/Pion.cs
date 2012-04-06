@@ -70,5 +70,10 @@ namespace MensErgerJeNiet.Model
 			
 			_vak.Pion = this;
 		}
+
+		public void onClick()
+		{
+			_eigenaar.onClickPion(this);
+		}
     }
 }
