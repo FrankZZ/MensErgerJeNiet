@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Controller\Spel.cs" />
+    <Compile Include="Model\Vakken\Koppelvak.cs" />
     <Compile Include="Shared\ChangedEventHandler.cs" />
     <Compile Include="Shared\EventArgs.cs" />
     <Compile Include="Shared\SpelerKleur.cs" />
