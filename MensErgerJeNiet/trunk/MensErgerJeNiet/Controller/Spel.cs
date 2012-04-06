@@ -104,9 +104,23 @@ namespace MensErgerJeNiet.Controller
 			}
 		}
 
-		public void updateFromView(object sender, EventArgs e)
+		public void updateFromView(object sender, EventArgs<ViewEvents> e)
+		{
+			switch (e.Event)
+			{
+				case ViewEvents.DiceClick: RollDice(); break;
+				case ViewEvents.PionClick: PionMove(e.Value); break;
+			}
+		}
+
+		private void RollDice()
 		{
 			_spelers[0].ValueDiced = _dobbelsteen.Gooi();
+		}
+
+		private void PionMove()
+		{
+
 		}
     }
 }

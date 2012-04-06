@@ -62,9 +62,11 @@
     </Page>
     <Compile Include="Controller\Spel.cs" />
     <Compile Include="Shared\ChangedEventHandler.cs" />
+    <Compile Include="Shared\EventArgs.cs" />
     <Compile Include="Shared\SpelerKleur.cs" />
     <Compile Include="Shared\SpelerStatus.cs" />
-    <Compile Include="Controller\ArcObserver.cs" />
+    <Compile Include="Shared\ViewEventsEnum.cs" />
+    <Compile Include="View\ArcObserver.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
