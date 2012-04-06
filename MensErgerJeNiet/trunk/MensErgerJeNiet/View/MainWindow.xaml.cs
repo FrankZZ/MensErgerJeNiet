@@ -84,8 +84,7 @@ namespace MensErgerJeNiet
 			{
 				txtStatus.Text = "Kies één van uw pionnen om " + speler.ValueDiced + " plekken te verzetten.";
 			}
-
-			MessageBox.Show(((Speler) sender).Status.ToString());
+			MessageBox.Show(speler.ToString() + ": " + speler.Status.ToString());
 		}
 	}
 }
