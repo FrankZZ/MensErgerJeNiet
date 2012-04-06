@@ -89,11 +89,28 @@ namespace MensErgerJeNiet.Controller
 			Vak huidigVak = _bord.EersteVak;
 			Vak eersteVak = huidigVak;
 			int i = 0;
+			int eindVakCount = 56;
 
 			// heeft huidigVak een volgende? (linkedlist) && volgendvak NIET eerste? Anders zijn we al rond
 
 			while (huidigVak.HeeftVolgende() && huidigVak.Volgende != eersteVak)
 			{
+				if (huidigVak is Koppelvak)
+				{
+					Eindvak huidigEindvak = ((Koppelvak)huidigVak).Eindvak;
+
+					for (int j = 0; j < 4; j++)
+					{
+						int idx = eindVakCount + j;
+						huidigEindvak.Changed += new ChangedEventHandler(arcs[idx].updateFromVak);
+						
+						arcs[idx].Vak = huidigEindvak;
+						
+						huidigEindvak = (Eindvak) huidigEindvak.Volgende;
+					}
+					eindVakCount += 4;
+				}
+
 				huidigVak.Changed += new ChangedEventHandler(arcs[i].updateFromVak);
 				arcs[i].Vak = huidigVak;
 
@@ -135,7 +152,8 @@ namespace MensErgerJeNiet.Controller
 
 		private void RollDice()
 		{
-			_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
+			//_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
+			_spelers[_speler].ValueDiced = 6;
 		}
 
 		private void VakClick(Vak vak)
