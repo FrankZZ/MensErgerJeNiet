@@ -158,12 +158,19 @@ namespace MensErgerJeNiet.Model
 
 		public void onClickPion(Pion pion)
 		{
+			// zijn we aan de beurt?
+			if (_status != SpelerStatus.WachtOpPion)
+				return;
+
 			int steps = _valueDiced;
 
 			if (pion.Vak is Wachtvak) 
 				steps++;
 
-			pion.move(steps);
+			if (pion.move(steps))
+			{
+				OnChanged();
+			}
 		}
 
 		private void OnChanged()

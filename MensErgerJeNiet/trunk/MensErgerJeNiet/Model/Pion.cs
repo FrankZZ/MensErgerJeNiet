@@ -54,12 +54,13 @@ namespace MensErgerJeNiet.Model
 		public void move(int steps = 1)
 		{
 			Vak vak = _vak;
-			for (int i = 0; i < steps; i++) vak = vak.Volgende;
+			for (int i = 0; i < steps; i++) 
+				vak = vak.Volgende;
 
 			vak.Pion = this; //geslagen, oude replaced.
-			
+
 			_vak.Pion = null;
-			
+
 			_vak = vak;
 		}
 
