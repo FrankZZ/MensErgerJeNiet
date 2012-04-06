@@ -3,8 +3,8 @@
 	x:Name="Window"
 	Title="Mens Erger Je Niet" Height="456" Width="680" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
 	<Grid>
-		<GroupBox Header="Speelbord" Height="406" HorizontalAlignment="Left" Name="groupBox1" VerticalAlignment="Top" Width="431" Margin="12,12,0,0">
-			<Grid x:Name="LayoutRoot">
+		<GroupBox Header="Speelbord" Height="406" HorizontalAlignment="Left" Name="groupBox1" VerticalAlignment="Top" Width="431" Margin="12,12,0,0" FontWeight="Bold" FontStyle="Normal" Foreground="Black" FontSize="13">
+			<Grid x:Name="LayoutRoot" Background="#FFFFFEA1">
 				<ed:Arc ArcThickness="20" ArcThicknessUnit="Pixel" EndAngle="360" Fill="#FF9494FF" HorizontalAlignment="Left" Height="27" Margin="227,24,0,0" Stretch="None" Stroke="Black" StartAngle="0" VerticalAlignment="Top" Width="30" d:LayoutOverrides="HorizontalAlignment" Initialized="Arc_Initialized" MouseDown="Arc_MouseDown" />
 				<ed:Arc ArcThickness="20" ArcThicknessUnit="Pixel" EndAngle="360" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="27" Margin="227,55,0,0" Stretch="None" Stroke="Black" StartAngle="0" VerticalAlignment="Top" Width="30" d:LayoutOverrides="HorizontalAlignment" Initialized="Arc_Initialized" MouseDown="Arc_MouseDown" />
 				<ed:Arc ArcThickness="20" ArcThicknessUnit="Pixel" EndAngle="360" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="27" Margin="227,86,0,0" Stretch="None" Stroke="Black" StartAngle="0" VerticalAlignment="Top" Width="30" d:LayoutOverrides="HorizontalAlignment" Initialized="Arc_Initialized" MouseDown="Arc_MouseDown" />
@@ -81,9 +81,9 @@
 				<ed:Arc ArcThickness="20" ArcThicknessUnit="Pixel" EndAngle="360" Fill="Red" HorizontalAlignment="Left" Margin="159,179,0,0" Stretch="None" Stroke="Black" StartAngle="0" Width="30" RenderTransformOrigin="4.1,2.481" Height="27" VerticalAlignment="Top" Initialized="Arc_Initialized" MouseDown="Arc_MouseDown" />
 			</Grid>
 		</GroupBox>
-		<GroupBox Header="Menu" Height="406" HorizontalAlignment="Left" Margin="449,12,0,0" Name="groupBox2" VerticalAlignment="Top" Width="214">
+		<GroupBox Header="Menu" Height="406" HorizontalAlignment="Left" Margin="449,12,0,0" Name="groupBox2" VerticalAlignment="Top" Width="214" FontWeight="Bold" FontSize="13">
 			<Grid Width="211">
-				<Button Content="Gooi Dobbelsteen" Height="23" HorizontalAlignment="Left" Margin="18,47,0,0" Name="DiceButton" VerticalAlignment="Top" Width="167" Click="DiceButton_Click" />
+				<Button Content="Gooi Dobbelsteen" Height="23" HorizontalAlignment="Left" Margin="18,47,0,0" Name="DiceButton" VerticalAlignment="Top" Width="167" Click="DiceButton_Click" IsEnabled="False" FontWeight="Normal" FontSize="12" />
 				<TextBlock Height="69" HorizontalAlignment="Left" Margin="18,292,0,0" Name="txtStatus" Text="" VerticalAlignment="Top" Width="167" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" FontWeight="Bold" />
 				<Label Height="32" HorizontalAlignment="Left" Margin="18,9,0,0" Name="lblCurrPlayer" VerticalAlignment="Top" Width="167" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold" />
 				<Label Height="87" HorizontalAlignment="Left" Margin="18,76,0,0" Name="lblDice" VerticalAlignment="Top" Width="167" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="64" FontWeight="Bold" />

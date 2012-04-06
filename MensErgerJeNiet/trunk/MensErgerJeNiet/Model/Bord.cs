@@ -55,11 +55,14 @@ namespace MensErgerJeNiet.Model
 				}
 				else
 				{
-					huidigVak = new Speelvak();
-
 					if (modulo == 9) // Koppelvakje
 					{
+						huidigVak = new Koppelvak();
 						// TODO: Extra methodes voor koppelvak
+					}
+					else
+					{
+						huidigVak = new Speelvak();
 					}
 				}
 				// Koppel vorige vak aan huidige, linked list

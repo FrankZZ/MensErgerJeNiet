@@ -198,7 +198,7 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public String ToString()
+		public override String ToString()
 		{
 			return _naam;
 		}
