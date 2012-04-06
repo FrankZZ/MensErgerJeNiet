@@ -19,11 +19,28 @@ namespace MensErgerJeNiet.Model
 
 		private SpelerStatus _status;
 
+		private int _valueDiced;
+
+		public int ValueDiced
+		{
+			set
+			{
+				_valueDiced = value;
+				Status = SpelerStatus.WachtOpPion;
+			}
+		}
+
 		public SpelerStatus Status
 		{
 			get
 			{
 				return _status;
+			}
+
+			set
+			{
+				_status = value;
+				OnChanged();
 			}
 		}
 
@@ -99,6 +116,7 @@ namespace MensErgerJeNiet.Model
 					_beginvak.Eigenaar = this;
 				}
 			}
+
 			get
 			{
 				return _beginvak;
@@ -131,11 +149,6 @@ namespace MensErgerJeNiet.Model
 				_wachtvakken[i].Pion = _pionnen[i];
 				_pionnen[i].Vak = _wachtvakken[i];
 			}
-		}
-
-		public void doTurn(int steps)
-		{
-			OnChanged();
 		}
 
 		private void OnChanged()
