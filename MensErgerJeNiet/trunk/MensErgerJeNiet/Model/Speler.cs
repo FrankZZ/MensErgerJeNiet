@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using MensErgerJeNiet.Model.Vakken;
 using System.Windows;
+using MensErgerJeNiet.Shared;
 
 namespace MensErgerJeNiet.Model
 {
     public class Speler
     {
+		public event ChangedEventHandler Changed;
+
 		private Pion[] _pionnen;
 		private Wachtvak[] _wachtvakken;
 		private Beginvak _beginvak;
@@ -115,6 +118,19 @@ namespace MensErgerJeNiet.Model
 			{
 				_wachtvakken[i].Pion = _pionnen[i];
 				_pionnen[i].Vak = _wachtvakken[i];
+			}
+		}
+
+		public void doTurn(int steps)
+		{
+
+		}
+
+		private void OnChanged()
+		{
+			if (Changed != null)
+			{
+				Changed(this, new EventArgs());
 			}
 		}
     }

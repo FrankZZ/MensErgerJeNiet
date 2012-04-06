@@ -67,5 +67,10 @@ namespace MensErgerJeNiet
 				Changed(this, new EventArgs());
 			}
 		}
+
+		public void updateFromSpeler(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
