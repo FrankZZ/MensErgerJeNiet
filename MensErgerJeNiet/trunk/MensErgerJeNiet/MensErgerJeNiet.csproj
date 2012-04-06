@@ -62,7 +62,7 @@
     </Page>
     <Compile Include="Controller\Spel.cs" />
     <Compile Include="Shared\ChangedEventHandler.cs" />
-    <Compile Include="Shared\Kleur.cs" />
+    <Compile Include="Shared\SpelerKleur.cs" />
     <Compile Include="Shared\SpelerStatus.cs" />
     <Compile Include="View\ArcObserver.cs" />
     <Compile Include="View\MainWindow.xaml.cs">

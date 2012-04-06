@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Expression.Shapes;
 using MensErgerJeNiet.Model.Vakken;
 using MensErgerJeNiet.Model;
+using MensErgerJeNiet.Shared;
 using System.Windows.Media;
 using System.Windows;
 
@@ -41,10 +42,10 @@ namespace MensErgerJeNiet.View
 				Pion pion = vak.Pion;
 				switch (pion.Kleur)
 				{
-					case Kleur.Blauw: kleur = Brushes.Blue; break;
-					case Kleur.Groen: kleur = Brushes.Green; break;
-					case Kleur.Geel: kleur = Brushes.Yellow; break;
-					case Kleur.Rood: kleur = Brushes.Red; break;
+					case SpelerKleur.Blauw: kleur = Brushes.Blue; break;
+					case SpelerKleur.Groen: kleur = Brushes.Green; break;
+					case SpelerKleur.Geel: kleur = Brushes.Yellow; break;
+					case SpelerKleur.Rood: kleur = Brushes.Red; break;
 				}
 				_arc.ArcThickness = 8;
 			}

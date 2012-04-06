@@ -15,12 +15,22 @@ namespace MensErgerJeNiet.Model
 		private Pion[] _pionnen;
 		private Wachtvak[] _wachtvakken;
 		private Beginvak _beginvak;
-		private Kleur _kleur;
+		private SpelerKleur _kleur;
+
+		private SpelerStatus _status;
+
+		public SpelerStatus Status
+		{
+			get
+			{
+				return _status;
+			}
+		}
 
 		// Spelernummer, één van vier
 		private int _nummer;
 
-		public Kleur Kleur
+		public SpelerKleur Kleur
 		{
 			get
 			{
@@ -97,6 +107,8 @@ namespace MensErgerJeNiet.Model
 
 		public Speler(Beginvak beginVak)
 		{
+			_status = SpelerStatus.WachtOpBeurt;
+
 			_beginvak = beginVak;
 
 			_pionnen = new Pion[4];
