@@ -104,12 +104,19 @@ namespace MensErgerJeNiet.Controller
 			}
 		}
 
-		public void updateFromView(object sender, EventArgs<ViewEvent> e)
+		public void updateFromView(object sender, EventArgs<ViewEvents> e)
 		{
 			switch (e.Event)
 			{
 				case ViewEvents.DiceClick: RollDice(); break;
-				case ViewEvents.PionClick: PionMove(e.Value); break;
+
+				case ViewEvents.VakClick:
+				{
+					Vak value = ((EventArgs<ViewEvents, Vak>) e).Value;
+					VakClick(value);
+
+					break;
+				}
 			}
 		}
 
@@ -118,9 +125,9 @@ namespace MensErgerJeNiet.Controller
 			_spelers[0].ValueDiced = _dobbelsteen.Gooi();
 		}
 
-		private void PionMove()
+		private void VakClick(Vak vak)
 		{
-
+			vak.OnClick();
 		}
     }
 }

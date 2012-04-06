@@ -7,7 +7,7 @@ namespace MensErgerJeNiet.Shared
 {
 	public enum ViewEvents
 	{
-		PionClick,
+		VakClick,
 		DiceClick
 	}
 }
