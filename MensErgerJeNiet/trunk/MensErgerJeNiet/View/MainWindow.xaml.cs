@@ -19,12 +19,12 @@ namespace MensErgerJeNiet
 
 	public partial class MainWindow : Window
 	{
-		private List<Observer> _arcs;
-		private Dictionary<Arc,Observer> _observers;
+		private List<ArcObserver> _arcs;
+		private Dictionary<Arc,ArcObserver> _observers;
 		
 		public ChangedEventHandler Changed;
 
-		public List<Observer> Arcs
+		public List<ArcObserver> Arcs
 		{
 			get
 			{
@@ -34,8 +34,8 @@ namespace MensErgerJeNiet
 
 		public MainWindow()
 		{
-			_arcs = new List<Observer>();
-			_observers = new Dictionary<Arc, Observer>();
+			_arcs = new List<ArcObserver>();
+			_observers = new Dictionary<Arc, ArcObserver>();
 
 			this.InitializeComponent();
 		}
@@ -43,7 +43,7 @@ namespace MensErgerJeNiet
 		private void Arc_Initialized(object sender, EventArgs e)
 		{
 			Arc arc = (Arc)sender;
-			Observer observer = new Observer(arc);
+			ArcObserver observer = new ArcObserver(arc);
 
 			_arcs.Add (observer);
 			_observers.Add(arc, observer);

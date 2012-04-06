@@ -71,7 +71,7 @@ namespace MensErgerJeNiet.Controller
 			_window.Changed += new ChangedEventHandler(this.updateFromView);
 
 			//Vak eersteVak = _bord.EersteVak;
-			List<Observer> arcs = _window.Arcs;
+			List<ArcObserver> arcs = _window.Arcs;
 
 			Vak huidigVak = _bord.EersteVak;
 			Vak eersteVak = huidigVak;
