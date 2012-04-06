@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MensErgerJeNiet.Model.Vakken;
+using MensErgerJeNiet.Shared;
+
 using System.Windows;
 
 namespace MensErgerJeNiet.Model
