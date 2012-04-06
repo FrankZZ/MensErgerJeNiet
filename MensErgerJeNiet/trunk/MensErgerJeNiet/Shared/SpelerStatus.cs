@@ -9,6 +9,7 @@ namespace MensErgerJeNiet.Shared
 	{
 		WachtOpBeurt,
 		WachtOpDobbelsteen,
-		WachtOpPion
+		WachtOpPion,
+		Uit
 	}
 }

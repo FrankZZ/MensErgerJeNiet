@@ -17,6 +17,8 @@ namespace MensErgerJeNiet.Model
 		private Beginvak _beginvak;
 		private SpelerKleur _kleur;
 
+		private String _naam;
+
 		private SpelerStatus _status;
 
 		private int _valueDiced;
@@ -128,8 +130,10 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Speler(Beginvak beginVak)
+		public Speler(Beginvak beginVak, String naam)
 		{
+			_naam = naam;
+
 			_status = SpelerStatus.WachtOpBeurt;
 
 			_beginvak = beginVak;
@@ -169,8 +173,7 @@ namespace MensErgerJeNiet.Model
 				steps++;
 
 			pion.move(steps);
-			OnChanged();
-
+			Status = SpelerStatus.WachtOpBeurt;
 		}
 
 		private void OnChanged()
@@ -179,6 +182,11 @@ namespace MensErgerJeNiet.Model
 			{
 				Changed(this, new EventArgs());
 			}
+		}
+
+		public String ToString()
+		{
+			return _naam;
 		}
     }
 }
