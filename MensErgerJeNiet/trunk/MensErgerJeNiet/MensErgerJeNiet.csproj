@@ -63,6 +63,7 @@
     <Compile Include="Controller\Spel.cs" />
     <Compile Include="Shared\ChangedEventHandler.cs" />
     <Compile Include="Model\Kleur.cs" />
+    <Compile Include="Shared\StringEventArgs.cs" />
     <Compile Include="View\ArcObserver.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
