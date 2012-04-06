@@ -60,7 +60,7 @@ namespace MensErgerJeNiet.Controller
 
 		private void AttachView()
 		{
-			_window.Changed += new ChangedEventHandler(this.update);
+			_window.Changed += new ChangedEventHandler(this.updateFromView);
 
 			//Vak eersteVak = _bord.EersteVak;
 			List<Observer> arcs = _window.Arcs;
@@ -73,7 +73,7 @@ namespace MensErgerJeNiet.Controller
 
 			while (huidigVak.HeeftVolgende() && huidigVak.Volgende != eersteVak)
 			{
-				huidigVak.Changed += new ChangedEventHandler(arcs[i].update);
+				huidigVak.Changed += new ChangedEventHandler(arcs[i].updateFromVak);
 				arcs[i].Vak = huidigVak;
 
 				huidigVak = huidigVak.Volgende;
@@ -91,16 +91,19 @@ namespace MensErgerJeNiet.Controller
 					speler++;
 				}
 				huidigVak = _spelers[speler].GetWachtvak(modulo);
-				huidigVak.Changed += new ChangedEventHandler(arcs[j].update);
+				huidigVak.Changed += new ChangedEventHandler(arcs[j].updateFromVak);
 				arcs[j].Vak = huidigVak;
 			}
+
+			// Speler koppelen aan
+			_spelers[speler].Changed += new ChangedEventHandler(_window.updateFromSpeler);
 		}
 
-		public void update(object sender, EventArgs e)
+		public void updateFromView(object sender, EventArgs e)
 		{
 			int waarde = _dobbelsteen.Gooi();
 
-			_spelers[0].Pionnen[0].move(waarde);
+			_spelers[0].doTurn(waarde);
 		}
     }
 }

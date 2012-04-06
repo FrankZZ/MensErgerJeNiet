@@ -30,7 +30,7 @@ namespace MensErgerJeNiet.View
 			_kleur = arc.Fill;
 		}
 
-		public void update(Object o, EventArgs e)
+		public void updateFromVak(Object o, EventArgs e)
 		{
 			Vak vak = (Vak) o;
 
