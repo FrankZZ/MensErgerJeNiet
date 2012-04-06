@@ -52,6 +52,7 @@ namespace MensErgerJeNiet
 		private void Arc_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			_observers[(Arc)sender].OnClick();
+			MessageBox.Show("actie uitgevoerd, evt. volgende speler");
 		}
 
 		private void DiceButton_Click(object sender, RoutedEventArgs e)
