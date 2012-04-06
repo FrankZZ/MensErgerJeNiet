@@ -45,12 +45,20 @@ namespace MensErgerJeNiet.Controller
 
 			AttachView();
 
-			ShowWindow();
+			ChangedEventHandler SpelerChangedHandler = new ChangedEventHandler(_window.updateFromSpeler);
 
 			foreach (Speler s in _spelers)
 			{
 				s.SetPionnen();
+				s.Changed += SpelerChangedHandler;
 			}
+
+			if (_spelers[0] != null)
+			{
+				_spelers[0].Status = SpelerStatus.WachtOpDobbelsteen;
+			}
+
+			ShowWindow();
 		}
 
 		private void ShowWindow()
@@ -81,7 +89,7 @@ namespace MensErgerJeNiet.Controller
 			}
 
 			int speler = -1; // Speler index. -1 omdat (0 % 4) == 0
-
+			
 			for (int j = 40; j < (40 + 16); j++)
 			{
 				int modulo = j % 4;
@@ -94,16 +102,13 @@ namespace MensErgerJeNiet.Controller
 				huidigVak.Changed += new ChangedEventHandler(arcs[j].updateFromVak);
 				arcs[j].Vak = huidigVak;
 			}
-
-			// Speler koppelen aan
-			_spelers[speler].Changed += new ChangedEventHandler(_window.updateFromSpeler);
 		}
 
 		public void updateFromView(object sender, EventArgs e)
 		{
 			int waarde = _dobbelsteen.Gooi();
 
-			_spelers[0].doTurn(waarde);
+			_spelers[0].SetDicedValue(waarde);
 		}
     }
 }
