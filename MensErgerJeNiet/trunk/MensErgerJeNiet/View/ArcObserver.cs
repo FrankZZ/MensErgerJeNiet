@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace MensErgerJeNiet.View
 {
-	public class Observer
+	public class ArcObserver
 	{
 		private Arc _arc;
 		private Brush _kleur;
@@ -25,7 +25,7 @@ namespace MensErgerJeNiet.View
 			}
 		}
 
-		public Observer(Arc arc)
+		public ArcObserver(Arc arc)
 		{
 			_arc = arc;
 			_kleur = arc.Fill;

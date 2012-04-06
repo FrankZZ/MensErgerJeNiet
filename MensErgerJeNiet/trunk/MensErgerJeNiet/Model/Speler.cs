@@ -165,7 +165,7 @@ namespace MensErgerJeNiet.Model
 			int steps = _valueDiced;
 
 			// extra stap om van wacht->start te gaan
-			if (pion.Vak is Wachtvak) 
+			if (pion.Vak is Wachtvak)
 				steps++;
 
 			pion.move(steps);
