@@ -68,7 +68,9 @@ namespace MensErgerJeNiet.Controller
 
 		private void AttachView()
 		{
-			_window.Changed += new ChangedEventHandler(this.updateFromView);
+			ChangedEventHandler eventHandler = new ChangedEventHandler(this.updateFromView);
+			
+			_window.Changed += eventHandler;
 
 			//Vak eersteVak = _bord.EersteVak;
 			List<ArcObserver> arcs = _window.Arcs;
@@ -104,9 +106,9 @@ namespace MensErgerJeNiet.Controller
 			}
 		}
 
-		public void updateFromView(object sender, EventArgs<ViewEvents> e)
+		public void updateFromView(object sender, EventArgs e)
 		{
-			switch (e.Event)
+			switch (((EventArgs<ViewEvents>) e).Event)
 			{
 				case ViewEvents.DiceClick: RollDice(); break;
 
