@@ -23,9 +23,14 @@ namespace MensErgerJeNiet.Model
 
 		public int ValueDiced
 		{
+			get
+			{
+				return _valueDiced;
+			}
 			set
 			{
 				_valueDiced = value;
+				// OnChanged wordt gevuurd via Status.
 				Status = SpelerStatus.WachtOpPion;
 			}
 		}
@@ -149,6 +154,11 @@ namespace MensErgerJeNiet.Model
 				_wachtvakken[i].Pion = _pionnen[i];
 				_pionnen[i].Vak = _wachtvakken[i];
 			}
+		}
+
+		public void onClickPion(Pion pion)
+		{
+			pion.move(_valueDiced);
 		}
 
 		private void OnChanged()
