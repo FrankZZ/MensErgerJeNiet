@@ -51,11 +51,22 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public void move(int steps = 1)
+		public void move(int steps)
 		{
 			Vak vak = _vak;
-			for (int i = 0; i < steps; i++) 
+			for (int i = 0; i < steps; i++)
+			{
 				vak = vak.Volgende;
+				if (vak is Koppelvak)
+				{
+					MessageBox.Show("KOPPELVAKKK GEPASSEERD");
+					Koppelvak koppelVak = (Koppelvak) vak;
+					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
+					{
+						vak = koppelVak.Eindvak;
+					}
+				}
+			}
 
 			vak.Pion = this; //geslagen, oude replaced.
 

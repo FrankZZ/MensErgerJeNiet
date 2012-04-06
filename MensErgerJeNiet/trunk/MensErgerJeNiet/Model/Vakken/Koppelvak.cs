@@ -10,7 +10,7 @@ namespace MensErgerJeNiet.Model.Vakken
 		private Speler _eigenaar;
 		
 		private Eindvak _eindvak;
-
+		
 		public Eindvak Eindvak
 		{
 			get
