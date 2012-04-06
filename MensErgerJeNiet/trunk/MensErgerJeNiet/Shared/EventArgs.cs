@@ -5,32 +5,13 @@ using System.Text;
 
 namespace MensErgerJeNiet.Shared
 {
-	class EventArgs<EventType, ValueType> : EventArgs<ValueType>
-	{
-		private EventType _event;
-
-		public EventArgs(EventType eEvent, ValueType eValue) : base(eValue)
-		{
-			this._event = eEvent;
-		}
-
-		public EventType Event
-		{
-			get
-			{
-				return _event;
-			}
-		}
-
-	}
-
-	class EventArgs<ValueType> : EventArgs
+	class EventArgs<EventType, ValueType> : EventArgs<EventType>
 	{
 		private ValueType _value;
 
-		public EventArgs(ValueType value)
+		public EventArgs(EventType eEvent, ValueType eValue) : base(eEvent)
 		{
-			_value = value;
+			_value = eValue;
 		}
 
 		public ValueType Value
@@ -38,6 +19,25 @@ namespace MensErgerJeNiet.Shared
 			get
 			{
 				return _value;
+			}
+		}
+
+	}
+
+	class EventArgs<EventType> : EventArgs
+	{
+		private EventType _event;
+
+		public EventArgs(EventType eEvent)
+		{
+			_event = eEvent;
+		}
+
+		public EventType Event
+		{
+			get
+			{
+				return _event;
 			}
 		}
 
