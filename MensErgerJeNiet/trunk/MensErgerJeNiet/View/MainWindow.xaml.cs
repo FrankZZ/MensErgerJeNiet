@@ -82,12 +82,13 @@ namespace MensErgerJeNiet
 
 			if (speler.Status == SpelerStatus.WachtOpDobbelsteen)
 			{
-
+				lblCurrPlayer.Content = speler.ToString();
 			}
 
 			if (speler.Status == SpelerStatus.WachtOpPion)
 			{
-				txtStatus.Text = "Kies één van uw pionnen om " + speler.ValueDiced + " plekken te verzetten.";
+				txtStatus.Text = "Kies welke van uw pionnen u " + speler.ValueDiced + " plaats" + (speler.ValueDiced > 1 ? "en" : "") + " wilt verzetten.";
+				lblDice.Content = speler.ValueDiced;
 			}
 			MessageBox.Show(speler.ToString() + ": " + speler.Status.ToString());
 		}
