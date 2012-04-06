@@ -158,7 +158,12 @@ namespace MensErgerJeNiet.Model
 
 		public void onClickPion(Pion pion)
 		{
-			pion.move(_valueDiced);
+			int steps = _valueDiced;
+
+			if (pion.Vak is Wachtvak) 
+				steps++;
+
+			pion.move(steps);
 		}
 
 		private void OnChanged()
