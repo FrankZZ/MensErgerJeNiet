@@ -17,6 +17,8 @@ namespace MensErgerJeNiet.View
 		private Brush _kleur;
 		private Vak _vak;
 
+		public ChangedEventHandler Changed;
+
 		public Vak Vak
 		{
 			set
@@ -59,7 +61,18 @@ namespace MensErgerJeNiet.View
 
 		public void OnClick()
 		{
-			_vak.OnClick();
+			OnChanged();
+		}
+
+		private void OnChanged()
+		{
+			if (Changed != null)
+			{
+				EventArgs<ViewEvents, Vak> eventArgs = 
+					new EventArgs<ViewEvents, Vak>(ViewEvents.VakClick, _vak);
+
+				Changed(this, eventArgs);
+			}
 		}
 	}
 }
