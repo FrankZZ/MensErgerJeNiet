@@ -6,9 +6,7 @@ using System.Text;
 namespace MensErgerJeNiet.Model.Vakken
 {
     public class Koppelvak : Vak
-    {
-		private Speler _eigenaar;
-		
+    {	
 		private Eindvak _eindvak;
 		
 		public Eindvak Eindvak
@@ -20,18 +18,6 @@ namespace MensErgerJeNiet.Model.Vakken
 			set
 			{
 				_eindvak = value;
-			}
-		}
-
-		public Speler Eigenaar
-		{
-			get
-			{
-				return _eigenaar;
-			}
-			set
-			{
-				_eigenaar = value;
 			}
 		}
     }

@@ -132,9 +132,9 @@ namespace MensErgerJeNiet.Model
 			{
 				if (value != null)
 				{
-					_beginvak = value;
 					// Eigenaar toekennen aan beginvakje
-					_beginvak.Eigenaar = this;
+					value.Eigenaar = this;
+					_beginvak = value;
 				}
 			}
 
@@ -150,7 +150,7 @@ namespace MensErgerJeNiet.Model
 
 			_status = SpelerStatus.WachtOpBeurt;
 
-			_beginvak = beginVak;
+			Beginvak = beginVak;
 
 			_pionnen = new Pion[4];
 			_wachtvakken = new Wachtvak[4];

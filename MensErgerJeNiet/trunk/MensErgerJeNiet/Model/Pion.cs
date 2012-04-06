@@ -59,8 +59,11 @@ namespace MensErgerJeNiet.Model
 				vak = vak.Volgende;
 				if (vak is Koppelvak)
 				{
-					MessageBox.Show("KOPPELVAKKK GEPASSEERD");
-					Koppelvak koppelVak = (Koppelvak) vak;
+					Koppelvak koppelVak = (Koppelvak)vak;
+					
+					MessageBox.Show(koppelVak.Volgende.ToString());
+
+					MessageBox.Show(((Beginvak)koppelVak.Volgende).Eigenaar.ToString());
 					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
 					{
 						vak = koppelVak.Eindvak;
