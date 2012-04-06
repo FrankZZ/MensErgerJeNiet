@@ -104,7 +104,7 @@ namespace MensErgerJeNiet.Controller
 			}
 		}
 
-		public void updateFromView(object sender, EventArgs<ViewEvents> e)
+		public void updateFromView(object sender, EventArgs<ViewEvent> e)
 		{
 			switch (e.Event)
 			{
