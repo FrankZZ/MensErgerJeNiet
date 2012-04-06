@@ -83,8 +83,9 @@
 		</GroupBox>
 		<GroupBox Header="Menu" Height="406" HorizontalAlignment="Left" Margin="449,12,0,0" Name="groupBox2" VerticalAlignment="Top" Width="214">
 			<Grid Width="211">
-				<Button Content="Gooi Dobbelsteen" Height="23" HorizontalAlignment="Left" Margin="18,16,0,0" Name="DiceButton" VerticalAlignment="Top" Width="167" Click="DiceButton_Click" />
+				<Button Content="Gooi Dobbelsteen" Height="23" HorizontalAlignment="Left" Margin="18,59,0,0" Name="DiceButton" VerticalAlignment="Top" Width="167" Click="DiceButton_Click" />
 				<TextBlock Height="69" HorizontalAlignment="Left" Margin="18,292,0,0" Name="txtStatus" Text="" VerticalAlignment="Top" Width="167" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" FontWeight="Bold" />
+				<Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="18,13,0,0" Name="lblCurrPlayer" VerticalAlignment="Top" Width="167" HorizontalContentAlignment="Center" />
 			</Grid>
 		</GroupBox>
 	</Grid>

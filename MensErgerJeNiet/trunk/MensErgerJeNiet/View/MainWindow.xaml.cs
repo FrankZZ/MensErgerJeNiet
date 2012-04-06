@@ -80,6 +80,11 @@ namespace MensErgerJeNiet
 		{
 			Speler speler = (Speler)sender;
 
+			if (speler.Status == SpelerStatus.WachtOpDobbelsteen)
+			{
+
+			}
+
 			if (speler.Status == SpelerStatus.WachtOpPion)
 			{
 				txtStatus.Text = "Kies één van uw pionnen om " + speler.ValueDiced + " plekken te verzetten.";
