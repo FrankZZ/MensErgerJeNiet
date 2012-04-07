@@ -184,10 +184,21 @@ namespace MensErgerJeNiet.Model
 
 			// extra stap om van wacht->start te gaan
 			if (pion.Vak is Wachtvak)
-				steps++;
-
-			pion.move(steps);
-			Status = SpelerStatus.WachtOpBeurt;
+			{
+				if (steps != 6)
+				{
+					Status = SpelerStatus.WachtOpBeurt;
+					return;
+				}
+				steps = 1;
+				pion.move(steps);
+				Status = SpelerStatus.WachtOpDobbelsteen;
+			}
+			else
+			{
+				pion.move(steps);
+				Status = SpelerStatus.WachtOpBeurt;
+			}
 		}
 
 		private void OnChanged()
