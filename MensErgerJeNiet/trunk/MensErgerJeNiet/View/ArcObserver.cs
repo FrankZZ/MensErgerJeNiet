@@ -36,6 +36,7 @@ namespace MensErgerJeNiet.View
 		{
 			_arc = arc;
 			_kleur = arc.Fill;
+			_arc.ArcThickness = 8;
 		}
 
 		public void updateFromVak(Object o, EventArgs e)
@@ -54,12 +55,12 @@ namespace MensErgerJeNiet.View
 					case SpelerKleur.Geel: kleur = Brushes.Yellow; break;
 					case SpelerKleur.Rood: kleur = Brushes.Red; break;
 				}
-				_arc.ArcThickness = 8;
+				_arc.ArcThickness = 20;
 			}
 			else
 			{
 				// geen pion op vakje
-				_arc.ArcThickness = 20;
+				_arc.ArcThickness = 8;
 			}
 			_arc.Fill = kleur;
 		}

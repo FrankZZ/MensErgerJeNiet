@@ -57,7 +57,6 @@ namespace MensErgerJeNiet.Model
 				{
 					if (modulo == 9) // Koppelvakje
 					{
-						MessageBox.Show("asd");
 						huidigVak = new Koppelvak();
 						Eindvak nieuwVak = new Eindvak();
 						((Koppelvak)huidigVak).Eindvak = nieuwVak;

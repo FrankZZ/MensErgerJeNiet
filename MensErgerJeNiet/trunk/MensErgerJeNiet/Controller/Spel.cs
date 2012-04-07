@@ -152,8 +152,8 @@ namespace MensErgerJeNiet.Controller
 
 		private void RollDice()
 		{
-			//_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
-			_spelers[_speler].ValueDiced = 41;
+			_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
+			//_spelers[_speler].ValueDiced = 41;
 		}
 
 		private void VakClick(Vak vak)
