@@ -27,7 +27,7 @@ namespace MensErgerJeNiet.Controller
 			_speler = 0;
 			_bord = new Bord();
 
-			_window = new MainWindow(this, _bord);
+			_window = new MainWindow(_bord);
 
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];

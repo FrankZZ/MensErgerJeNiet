@@ -23,13 +23,14 @@ namespace MensErgerJeNiet
 	{
 		public ChangedEventHandler Changed;
 		
-		private Spel _controller;
 		private Bord _model;
 
-		public MainWindow(Spel controller, Bord bord)
+		private Dictionary<Arc, ArcObserver> _observers;
+
+		public MainWindow(Bord bord)
 		{
-			_controller = controller;
 			_model = bord;
+			_observers = new Dictionary<Arc, ArcObserver>();
 
 			this.InitializeComponent();
 		}
@@ -38,13 +39,12 @@ namespace MensErgerJeNiet
 		{
 			Arc arc = (Arc)sender;
 			ArcObserver observer = new ArcObserver(arc);
-			
+			_observers.Add(arc, observer);
 		}
 
 		private void Arc_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			OnChanged(ViewEvents.VakClick, _observers[(Arc)sender].Vak);
-			((Arc)sender).
 		}
 
 		private void DiceButton_Click(object sender, RoutedEventArgs e)
