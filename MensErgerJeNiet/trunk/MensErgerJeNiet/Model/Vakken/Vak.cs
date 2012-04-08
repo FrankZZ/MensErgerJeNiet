@@ -10,9 +10,7 @@ namespace MensErgerJeNiet.Model.Vakken
     public abstract class Vak
     {
 		public event ChangedEventHandler Changed;
-
 		private Vak _volgende;
-
 		private Pion _pion;
 
 		public Vak Volgende
@@ -36,6 +34,7 @@ namespace MensErgerJeNiet.Model.Vakken
 			{
 				return _pion;
 			}
+
 			set
 			{
 				if (HeeftPion() && value != null)
