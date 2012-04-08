@@ -13,7 +13,7 @@ namespace MensErgerJeNiet.Model
 		public event ChangedEventHandler Changed;
 
 		private Pion[] _pionnen;
-		private Wachtvak[] _wachtvakken;
+		private Wachtvak _wachtvak;
 		private Beginvak _beginvak;
 		private SpelerKleur _kleur;
 
@@ -111,18 +111,10 @@ namespace MensErgerJeNiet.Model
 				{
 					if (wachtVak.HeeftPion() == false)
 					{
-						
+						return wachtVak;
 					}
+					wachtVak = (Wachtvak) wachtVak.Volgende;
 				}
-				
-				for (int i = 0; i < _wachtvakken.Length; i++)
-				{
-					if (!_wachtvakken[i].HeeftPion())
-					{
-						return _wachtvakken[i];
-					}
-				}
-
 				return null;
 			}
 		}
@@ -154,9 +146,8 @@ namespace MensErgerJeNiet.Model
 			Beginvak = beginVak;
 
 			_pionnen = new Pion[4];
-			_wachtvakken = new Wachtvak[4];
-
-			for (int i = 0; i < _pionnen.Length && i < _wachtvakken.Length; i++)
+			
+			for (int i = 0; i < _pionnen.Length; i++)
 			{
 				_pionnen[i] = new Pion();
 				_pionnen[i].Eigenaar = this;
@@ -165,11 +156,17 @@ namespace MensErgerJeNiet.Model
 
 		public void SetPionnen()
 		{
-			for (int i = 0; i < _wachtvakken.Length; i++)
+			Wachtvak wachtVak = _wachtvak;
+			int i = 0;
+
+			while (wachtVak.HeeftVolgende())
 			{
-				_wachtvakken[i].Pion = _pionnen[i];
-				_pionnen[i].Vak = _wachtvakken[i];
-			}
+				wachtVak.Pion = _pionnen[i];
+				_pionnen[i].Vak = wachtVak;
+
+				wachtVak = (Wachtvak) wachtVak.Volgende;
+				i++;
+			}	
 		}
 
 		public void onClickPion(Pion pion)
