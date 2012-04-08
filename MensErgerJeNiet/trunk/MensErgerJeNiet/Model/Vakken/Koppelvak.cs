@@ -20,5 +20,10 @@ namespace MensErgerJeNiet.Model.Vakken
 				_eindvak = value;
 			}
 		}
+
+		public bool HeeftEindvak()
+		{
+			return (_eindvak != null);
+		}
     }
 }

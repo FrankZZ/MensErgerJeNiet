@@ -25,20 +25,85 @@ namespace MensErgerJeNiet
 		
 		private Bord _model;
 
+		private List<Arc> _arcs;
 		private Dictionary<Arc, ArcObserver> _observers;
 
 		public MainWindow(Bord bord)
 		{
 			_model = bord;
 			_observers = new Dictionary<Arc, ArcObserver>();
+			_arcs = new List<Arc>();
 
 			this.InitializeComponent();
+
+			Attach();
+		}
+
+		private void Attach()
+		{
+			int i = 0;
+			int speler = 0;
+
+			Vak beginVak = _model.EersteVak;
+			
+			AttachObserverToVak(_observers[_arcs[0]], beginVak);
+			i++;
+
+			Vak huidigVak = beginVak.Volgende;
+			Eindvak[] eindVakken = new Eindvak[4];
+
+			// Regulier veld, het kruis
+			while (huidigVak != beginVak && huidigVak.HeeftVolgende() && i < _arcs.Count)
+			{
+				AttachObserverToVak(_observers[_arcs[i]], huidigVak);
+
+				if (huidigVak is Koppelvak)
+				{
+					Koppelvak koppelVak = (Koppelvak) huidigVak;
+					if (koppelVak.HeeftEindvak())
+					{
+						Eindvak eindVak = (Eindvak) koppelVak.Eindvak;
+						//ArcObserver arc = _observers[_arcs[
+						
+						int j = 0;
+
+						while (eindVak.HeeftVolgende() && j < 4)
+						{
+							int idx = 56 + j + (speler * 4);
+							ArcObserver arc = _observers[_arcs[idx]];
+							
+							AttachObserverToVak(arc, eindVak);
+
+							eindVak = (Eindvak) eindVak.Volgende;
+							j++;
+						}
+					}
+
+					Wachtvak wachtVak = _model.GetStartVak(speler);
+				}
+
+				huidigVak = huidigVak.Volgende;
+
+				if (i % 10 == 0)
+				{
+					speler++;
+				}
+
+				i++;
+			}
+		}
+
+		private void AttachObserverToVak(ArcObserver arc, Vak vak)
+		{
+			vak.Changed += new ChangedEventHandler(arc.updateFromVak);
 		}
 
 		private void Arc_Initialized(object sender, EventArgs e)
 		{
 			Arc arc = (Arc)sender;
 			ArcObserver observer = new ArcObserver(arc);
+			
+			_arcs.Add(arc);
 			_observers.Add(arc, observer);
 		}
 
