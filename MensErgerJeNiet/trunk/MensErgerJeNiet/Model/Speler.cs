@@ -100,20 +100,21 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Wachtvak GetWachtvak(int index)
-		{
-			if (index >= 0 && index < _wachtvakken.Length)
-			{
-				return _wachtvakken[index];
-			}
-			return null;
-		}
-
 		//return eerste lege wachtvak, alles vol = null
 		public Wachtvak Wachtvak
 		{
 			get
 			{
+				Wachtvak wachtVak = _wachtvak;
+
+				while (wachtVak.HeeftVolgende())
+				{
+					if (wachtVak.HeeftPion() == false)
+					{
+						
+					}
+				}
+				
 				for (int i = 0; i < _wachtvakken.Length; i++)
 				{
 					if (!_wachtvakken[i].HeeftPion())
@@ -144,7 +145,7 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Speler(Beginvak beginVak, String naam)
+		public Speler(Beginvak beginVak, Wachtvak wachtVak, String naam)
 		{
 			_naam = naam;
 
@@ -159,9 +160,6 @@ namespace MensErgerJeNiet.Model
 			{
 				_pionnen[i] = new Pion();
 				_pionnen[i].Eigenaar = this;
-				
-				_wachtvakken[i] = new Wachtvak();
-				_wachtvakken[i].Volgende = _beginvak;
 			}
 		}
 

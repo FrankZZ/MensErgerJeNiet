@@ -12,6 +12,7 @@ namespace MensErgerJeNiet.Model
 	{
 		private Vak _eerstevak;
 		private Beginvak[] _startvakken;
+		private Wachtvak[] _wachtvakken;
 
 
 		public Vak EersteVak
@@ -20,6 +21,15 @@ namespace MensErgerJeNiet.Model
 			{
 				return _eerstevak;
 			}
+		}
+
+		public Wachtvak GetWachtvak(int positie)
+		{
+			if (positie >= 0 && positie < _wachtvakken.Length)
+			{
+				return _wachtvakken[positie];
+			}
+			return null;
 		}
 
 		public Beginvak GetStartVak(int positie)
@@ -38,9 +48,11 @@ namespace MensErgerJeNiet.Model
 			int speler = 0;
 			_startvakken = new Beginvak[4];
 
+			_wachtvakken = new Wachtvak[4];
+
 			// Eerste vakje alvast maken vóór de loop
 			_eerstevak = new Beginvak();
-			_startvakken[speler++] = (Beginvak)_eerstevak;
+			_startvakken[speler++] = (Beginvak) _eerstevak;
 
 			// eerste vak is in dit geval de vorige voor de loop
 			Vak huidigVak = _eerstevak;
@@ -55,7 +67,15 @@ namespace MensErgerJeNiet.Model
 				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
-					_startvakken[speler++] = (Beginvak) huidigVak;
+					_startvakken[speler++] = (Beginvak)huidigVak;
+
+					Wachtvak wachtVak = new Wachtvak();
+
+					for (int j = 0; j < 14; j++)
+					{
+						wachtVak.Volgende = new Wachtvak();
+						wachtVak = (Wachtvak) wachtVak.Volgende;
+					}
 				}
 				else
 				{
@@ -64,13 +84,13 @@ namespace MensErgerJeNiet.Model
 						huidigVak = new Koppelvak();
 						Eindvak nieuwVak = new Eindvak();
 						((Koppelvak)huidigVak).Eindvak = nieuwVak;
-						
+
 						for (int j = 0; j < 4; j++)
 						{
 							Eindvak oudVak = nieuwVak;
-							
+
 							nieuwVak = new Eindvak();
-							
+
 							oudVak.Volgende = nieuwVak;
 
 						}
