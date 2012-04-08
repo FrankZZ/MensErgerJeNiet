@@ -25,9 +25,10 @@ namespace MensErgerJeNiet.Controller
 		public Spel()
 		{
 			_speler = 0;
-			_window = new MainWindow();
 			_bord = new Bord();
-			
+
+			_window = new MainWindow(this, _bord);
+
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];
 
@@ -54,8 +55,6 @@ namespace MensErgerJeNiet.Controller
 			// laatste met eerste verbinden
 			_spelers[_spelers.Length - 1].Volgende = _spelers[0];
 
-			AttachView();
-
 			ChangedEventHandler SpelerChangedHandler = new ChangedEventHandler(_window.updateFromSpeler);
 
 			foreach (Speler s in _spelers)
@@ -76,64 +75,7 @@ namespace MensErgerJeNiet.Controller
 		{
 			_window.Show();
 		}
-
-		private void AttachView()
-		{
-			ChangedEventHandler eventHandler = new ChangedEventHandler(this.updateFromView);
-			
-			_window.Changed += eventHandler;
-
-			//Vak eersteVak = _bord.EersteVak;
-			List<ArcObserver> arcs = _window.Arcs;
-
-			Vak huidigVak = _bord.EersteVak;
-			Vak eersteVak = huidigVak;
-			int i = 0;
-			int eindVakCount = 55;
-
-			// heeft huidigVak een volgende? (linkedlist) && volgendvak NIET eerste? Anders zijn we al rond
-
-			while (huidigVak.HeeftVolgende() && huidigVak.Volgende != eersteVak)
-			{
-				if (huidigVak is Koppelvak)
-				{
-					Eindvak huidigEindvak = ((Koppelvak)huidigVak).Eindvak;
-
-					for (int j = 1; j <= 4; j++)
-					{
-						int idx = eindVakCount + j;
-						huidigEindvak.Changed += new ChangedEventHandler(arcs[idx].updateFromVak);
-						
-						arcs[idx].Vak = huidigEindvak;
-						
-						huidigEindvak = (Eindvak) huidigEindvak.Volgende;
-					}
-					eindVakCount += 4;
-				}
-
-				huidigVak.Changed += new ChangedEventHandler(arcs[i].updateFromVak);
-				arcs[i].Vak = huidigVak;
-
-				huidigVak = huidigVak.Volgende;
-				i++;
-			}
-
-			int speler = -1; // Speler index. -1 omdat (0 % 4) == 0
-			
-			for (int j = 40; j < (40 + 16); j++)
-			{
-				int modulo = j % 4;
-
-				if (modulo == 0)
-				{
-					speler++;
-				}
-				huidigVak = _spelers[speler].GetWachtvak(modulo);
-				huidigVak.Changed += new ChangedEventHandler(arcs[j].updateFromVak);
-				arcs[j].Vak = huidigVak;
-			}
-		}
-
+		
 		public void updateFromView(object sender, EventArgs e)
 		{
 			switch (((EventArgs<ViewEvents>) e).Event)

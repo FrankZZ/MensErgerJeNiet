@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MensErgerJeNiet.Model.Vakken;
 using System.Windows;
+using MensErgerJeNiet.Shared;
 
 namespace MensErgerJeNiet.Model
 {
@@ -11,6 +12,7 @@ namespace MensErgerJeNiet.Model
 	{
 		private Vak _eerstevak;
 		private Beginvak[] _startvakken;
+
 
 		public Vak EersteVak
 		{
@@ -28,6 +30,8 @@ namespace MensErgerJeNiet.Model
 			}
 			return null;
 		}
+
+
 
 		public Bord()
 		{
