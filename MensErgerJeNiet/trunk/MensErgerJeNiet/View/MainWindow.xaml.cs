@@ -14,29 +14,22 @@ using MensErgerJeNiet.View;
 using MensErgerJeNiet.Shared;
 using MensErgerJeNiet.Model;
 using MensErgerJeNiet.Model.Vakken;
+using MensErgerJeNiet.Controller;
 
 namespace MensErgerJeNiet
 {
 
 	public partial class MainWindow : Window
 	{
-		private List<ArcObserver> _arcs;
-		private Dictionary<Arc,ArcObserver> _observers;
-		
 		public ChangedEventHandler Changed;
+		
+		private Spel _controller;
+		private Bord _model;
 
-		public List<ArcObserver> Arcs
+		public MainWindow(Spel controller, Bord bord)
 		{
-			get
-			{
-				return _arcs;
-			}
-		}
-
-		public MainWindow()
-		{
-			_arcs = new List<ArcObserver>();
-			_observers = new Dictionary<Arc, ArcObserver>();
+			_controller = controller;
+			_model = bord;
 
 			this.InitializeComponent();
 		}
@@ -45,14 +38,13 @@ namespace MensErgerJeNiet
 		{
 			Arc arc = (Arc)sender;
 			ArcObserver observer = new ArcObserver(arc);
-
-			_arcs.Add (observer);
-			_observers.Add(arc, observer);
+			
 		}
 
 		private void Arc_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			OnChanged(ViewEvents.VakClick, _observers[(Arc)sender].Vak);
+			((Arc)sender).
 		}
 
 		private void DiceButton_Click(object sender, RoutedEventArgs e)
