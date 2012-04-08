@@ -66,16 +66,19 @@ namespace MensErgerJeNiet.Model
 
 				if (modulo == 0) // Startvakje
 				{
-					huidigVak = new Beginvak();
-					_startvakken[speler++] = (Beginvak)huidigVak;
 
 					Wachtvak wachtVak = new Wachtvak();
+					
+					_wachtvakken[speler] = wachtVak;
 
-					for (int j = 0; j < 14; j++)
+					for (int j = 0; j < 4; j++)
 					{
 						wachtVak.Volgende = new Wachtvak();
 						wachtVak = (Wachtvak) wachtVak.Volgende;
 					}
+
+					huidigVak = new Beginvak();
+					_startvakken[speler++] = (Beginvak)huidigVak;
 				}
 				else
 				{

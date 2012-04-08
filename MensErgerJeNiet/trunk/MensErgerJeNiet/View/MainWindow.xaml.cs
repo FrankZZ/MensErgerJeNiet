@@ -79,16 +79,29 @@ namespace MensErgerJeNiet
 						}
 					}
 
-					Wachtvak wachtVak = _model.GetStartVak(speler);
 				}
 
 				huidigVak = huidigVak.Volgende;
 
 				if (i % 10 == 0)
 				{
+					Wachtvak wachtVak = _model.GetWachtvak(speler);
+					
+					int j = 0;
+
+					while (wachtVak.HeeftVolgende())
+					{
+						int idx = 40 + j + (speler * 4);
+						ArcObserver arc = _observers[_arcs[idx]];
+
+						AttachObserverToVak(arc, wachtVak);
+
+						wachtVak = (Wachtvak) wachtVak.Volgende;
+
+						j++;
+					}
 					speler++;
 				}
-
 				i++;
 			}
 		}
