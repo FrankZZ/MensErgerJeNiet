@@ -46,7 +46,7 @@ namespace MensErgerJeNiet
 
 			Vak beginVak = _model.EersteVak;
 			
-			AttachObserverToVak(_observers[_arcs[0]], beginVak);
+			AttachObserverToVak(_observers[_arcs[i]], beginVak);
 			i++;
 
 			Vak huidigVak = beginVak.Volgende;
@@ -79,29 +79,30 @@ namespace MensErgerJeNiet
 						}
 					}
 
-				}
-
-				huidigVak = huidigVak.Volgende;
-
-				if (i % 10 == 0)
-				{
 					Wachtvak wachtVak = _model.GetWachtvak(speler);
-					
-					int j = 0;
 
-					while (wachtVak.HeeftVolgende())
+					int n = 0;
+
+					while (wachtVak.HeeftVolgendeWachtvak())
 					{
-						int idx = 40 + j + (speler * 4);
+						int idx = 40 + n + (speler * 4);
 						ArcObserver arc = _observers[_arcs[idx]];
 
 						AttachObserverToVak(arc, wachtVak);
 
-						wachtVak = (Wachtvak) wachtVak.Volgende;
+						wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
 
-						j++;
+						n++;
 					}
+
+				}
+				
+				if (i % 10 == 0)
+				{
 					speler++;
 				}
+
+				huidigVak = huidigVak.Volgende;
 				i++;
 			}
 		}
@@ -109,6 +110,7 @@ namespace MensErgerJeNiet
 		private void AttachObserverToVak(ArcObserver arc, Vak vak)
 		{
 			vak.Changed += new ChangedEventHandler(arc.updateFromVak);
+			arc.Vak = vak;
 		}
 
 		private void Arc_Initialized(object sender, EventArgs e)
@@ -127,7 +129,12 @@ namespace MensErgerJeNiet
 
 		private void DiceButton_Click(object sender, RoutedEventArgs e)
 		{
-			OnChanged(ViewEvents.DiceClick);
+			if (diceCheat.Text.Length > 0)
+			{
+				OnChanged(ViewEvents.DiceClick, Convert.ToInt32(diceCheat.Text));
+			}
+			else
+				OnChanged(ViewEvents.DiceClick);
 		}
 
 		private void OnChanged(ViewEvents evt)
@@ -143,6 +150,14 @@ namespace MensErgerJeNiet
 			if (Changed != null)
 			{
 				Changed(this, new EventArgs<ViewEvents, Vak>(evt, vak));
+			}
+		}
+
+		private void OnChanged(ViewEvents evt, int cheat)
+		{
+			if (Changed != null)
+			{
+				Changed(this, new EventArgs<ViewEvents, int>(evt, cheat));
 			}
 		}
 

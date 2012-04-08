@@ -54,7 +54,7 @@ namespace MensErgerJeNiet.Model
 		public void move(int steps)
 		{
 			Vak vak = _vak;
-			for (int i = 0; i < steps; i++)
+			for (int i = 0; i < steps && vak.HeeftVolgende(); i++)
 			{
 				vak = vak.Volgende;
 				if (vak is Koppelvak)

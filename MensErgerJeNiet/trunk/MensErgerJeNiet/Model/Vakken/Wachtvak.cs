@@ -21,5 +21,10 @@ namespace MensErgerJeNiet.Model.Vakken
 				_volgendeWachtvak = value;
 			}
 		}
+
+		public bool HeeftVolgendeWachtvak()
+		{
+			return _volgendeWachtvak != null;
+		}
 	}
 }

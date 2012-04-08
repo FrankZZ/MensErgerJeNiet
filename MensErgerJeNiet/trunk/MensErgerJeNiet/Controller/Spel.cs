@@ -27,8 +27,6 @@ namespace MensErgerJeNiet.Controller
 			_speler = 0;
 			_bord = new Bord();
 
-			_window = new MainWindow(_bord);
-
 			_dobbelsteen = new Dobbelsteen();
 			_spelers = new Speler[4];
 
@@ -55,6 +53,9 @@ namespace MensErgerJeNiet.Controller
 			// laatste met eerste verbinden
 			_spelers[_spelers.Length - 1].Volgende = _spelers[0];
 
+			_window = new MainWindow(_bord);
+			_window.Changed += new ChangedEventHandler(updateFromView);
+
 			ChangedEventHandler SpelerChangedHandler = new ChangedEventHandler(_window.updateFromSpeler);
 
 			foreach (Speler s in _spelers)
@@ -80,7 +81,16 @@ namespace MensErgerJeNiet.Controller
 		{
 			switch (((EventArgs<ViewEvents>) e).Event)
 			{
-				case ViewEvents.DiceClick: RollDice(); break;
+				case ViewEvents.DiceClick: 
+				{
+					if (e is EventArgs<ViewEvents, int>)
+					{
+						_spelers[_speler].ValueDiced = ((EventArgs<ViewEvents, int>) e).Value;
+					}
+					else
+						RollDice(); 
+					break;		
+				}
 
 				case ViewEvents.VakClick:
 				{

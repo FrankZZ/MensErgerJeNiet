@@ -51,53 +51,59 @@ namespace MensErgerJeNiet.Model
 			_wachtvakken = new Wachtvak[4];
 
 			// Eerste vakje alvast maken vóór de loop
-			_eerstevak = new Beginvak();
-			_startvakken[speler++] = (Beginvak) _eerstevak;
+			_eerstevak = new Koppelvak();
 
 			// eerste vak is in dit geval de vorige voor de loop
 			Vak huidigVak = _eerstevak;
 			Vak vorigVak = _eerstevak;
 
 			// i = 1 omdat het startvakje hierboven al gemaakt is
-			for (int i = 1; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
+			for (int i = 0; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
 			{
 
-				int modulo = i % 10;
+				int modulo = (i - 1) % 10;
 
 				if (modulo == 0) // Startvakje
 				{
+					huidigVak = new Beginvak();
+					_startvakken[speler] = (Beginvak)huidigVak;
+
+					Eindvak nieuwVak = new Eindvak();
+					((Koppelvak)vorigVak).Eindvak = nieuwVak;
+
+					for (int j = 0; j < 4; j++)
+					{
+						Eindvak oudVak = nieuwVak;
+
+						nieuwVak = new Eindvak();
+
+						oudVak.Volgende = nieuwVak;
+					}
 
 					Wachtvak wachtVak = new Wachtvak();
-					
+
+					wachtVak.Volgende = huidigVak;
+
 					_wachtvakken[speler] = wachtVak;
 
 					for (int j = 0; j < 4; j++)
 					{
-						wachtVak.Volgende = new Wachtvak();
-						wachtVak = (Wachtvak) wachtVak.Volgende;
+						wachtVak.VolgendeWachtvak = new Wachtvak();
+
+						wachtVak.Volgende = _startvakken[speler];
+
+						wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
 					}
 
-					huidigVak = new Beginvak();
-					_startvakken[speler++] = (Beginvak)huidigVak;
+					speler++;
 				}
 				else
 				{
-					if (modulo == 9) // Koppelvakje
+					if (modulo == 9 || modulo == -1) // Koppelvakje
 					{
 						huidigVak = new Koppelvak();
-						Eindvak nieuwVak = new Eindvak();
-						((Koppelvak)huidigVak).Eindvak = nieuwVak;
 
-						for (int j = 0; j < 4; j++)
-						{
-							Eindvak oudVak = nieuwVak;
 
-							nieuwVak = new Eindvak();
-
-							oudVak.Volgende = nieuwVak;
-
-						}
-						// TODO: Extra methodes voor koppelvak
 					}
 					else
 					{

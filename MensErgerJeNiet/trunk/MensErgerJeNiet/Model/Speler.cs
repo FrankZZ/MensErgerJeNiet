@@ -107,13 +107,13 @@ namespace MensErgerJeNiet.Model
 			{
 				Wachtvak wachtVak = _wachtvak;
 
-				while (wachtVak.HeeftVolgende())
+				while (wachtVak.HeeftVolgendeWachtvak())
 				{
 					if (wachtVak.HeeftPion() == false)
 					{
 						return wachtVak;
 					}
-					wachtVak = (Wachtvak) wachtVak.Volgende;
+					wachtVak = (Wachtvak) wachtVak.VolgendeWachtvak;
 				}
 				return null;
 			}
@@ -143,6 +143,8 @@ namespace MensErgerJeNiet.Model
 
 			_status = SpelerStatus.WachtOpBeurt;
 
+			_wachtvak = wachtVak;
+
 			Beginvak = beginVak;
 
 			_pionnen = new Pion[4];
@@ -159,12 +161,12 @@ namespace MensErgerJeNiet.Model
 			Wachtvak wachtVak = _wachtvak;
 			int i = 0;
 
-			while (wachtVak.HeeftVolgende())
+			while (wachtVak.HeeftVolgendeWachtvak())
 			{
 				wachtVak.Pion = _pionnen[i];
 				_pionnen[i].Vak = wachtVak;
 
-				wachtVak = (Wachtvak) wachtVak.Volgende;
+				wachtVak = (Wachtvak) wachtVak.VolgendeWachtvak;
 				i++;
 			}	
 		}
@@ -180,11 +182,11 @@ namespace MensErgerJeNiet.Model
 			// extra stap om van wacht->start te gaan
 			if (pion.Vak is Wachtvak)
 			{
-				if (steps != 6)
+				/*if (steps != 6)
 				{
 					Status = SpelerStatus.WachtOpBeurt;
 					return;
-				}
+				}*/
 				steps = 1;
 				pion.move(steps);
 				Status = SpelerStatus.WachtOpDobbelsteen;
