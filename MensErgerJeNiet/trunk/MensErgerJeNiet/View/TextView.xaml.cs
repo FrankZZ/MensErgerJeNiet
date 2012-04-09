@@ -20,18 +20,27 @@ namespace MensErgerJeNiet.View
 	/// </summary>
 	public partial class TextView : Window
 	{
-		private Bord _model;
+		private List<Pion[]> _pionnen;
+		private String _content;
 
-		public TextView(Bord model)
+		public TextView(List<Pion[]> pionnen)
 		{
-			_model = model;
+			_pionnen = pionnen;
 
 			InitializeComponent();
 		}
 
 		private void Attach()
 		{
-			
+			foreach (Pion[] pionnen in _pionnen)
+			{
+				for (int i = 1; i < 4; i++)
+				{
+					Pion p = pionnen[i-1];
+
+
+				}
+			}
 		}
 	}
 }

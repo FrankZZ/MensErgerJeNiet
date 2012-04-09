@@ -110,7 +110,13 @@ namespace MensErgerJeNiet.Controller
 
 		private void DumpText()
 		{
-			//new TextView(
+			List<Pion[]> pionnen = new List<Pion[]>();
+			foreach(Speler s in _spelers)
+			{
+				pionnen.Add(s.Pionnen);
+			}
+
+			new TextView(pionnen);
 		}
 
 		private void VakClick(Vak vak)
