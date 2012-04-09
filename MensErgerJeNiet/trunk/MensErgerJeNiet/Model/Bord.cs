@@ -51,7 +51,7 @@ namespace MensErgerJeNiet.Model
 			_wachtvakken = new Wachtvak[4];
 
 			// Eerste vakje alvast maken vóór de loop
-			_eerstevak = new Koppelvak();
+			_eerstevak = new Beginvak();
 
 			// eerste vak is in dit geval de vorige voor de loop
 			Vak huidigVak = _eerstevak;
@@ -60,25 +60,12 @@ namespace MensErgerJeNiet.Model
 			// i = 1 omdat het startvakje hierboven al gemaakt is
 			for (int i = 0; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
 			{
-
-				int modulo = (i - 1) % 10;
+				int modulo = i % 10;
 
 				if (modulo == 0) // Startvakje
 				{
 					huidigVak = new Beginvak();
 					_startvakken[speler] = (Beginvak)huidigVak;
-
-					Eindvak nieuwVak = new Eindvak();
-					((Koppelvak)vorigVak).Eindvak = nieuwVak;
-
-					for (int j = 0; j < 4; j++)
-					{
-						Eindvak oudVak = nieuwVak;
-
-						nieuwVak = new Eindvak();
-
-						oudVak.Volgende = nieuwVak;
-					}
 
 					Wachtvak wachtVak = new Wachtvak();
 
@@ -99,11 +86,21 @@ namespace MensErgerJeNiet.Model
 				}
 				else
 				{
-					if (modulo == 9 || modulo == -1) // Koppelvakje
+					if (modulo == 9) // Koppelvakje
 					{
 						huidigVak = new Koppelvak();
+						
+						Eindvak nieuwVak = new Eindvak();
+						((Koppelvak)huidigVak).Eindvak = nieuwVak;
 
+						for (int j = 0; j < 4; j++)
+						{
+							Eindvak oudVak = nieuwVak;
 
+							nieuwVak = new Eindvak();
+
+							oudVak.Volgende = nieuwVak;
+						}
 					}
 					else
 					{

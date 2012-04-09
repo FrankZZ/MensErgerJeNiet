@@ -76,7 +76,7 @@ namespace MensErgerJeNiet.Model
 					
 					MessageBox.Show(koppelVak.Volgende.ToString());
 
-					if ((Koppelvak) koppelVak).Eigenaar == _eigenaar)
+					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
 					{
 						vak = koppelVak.Eindvak;
 					}
