@@ -94,7 +94,6 @@ namespace MensErgerJeNiet.Model
 		{
 			// Terug naar eerste beschikbare wachtvak
 			_vak = _eigenaar.Wachtvak;
-			
 			_vak.Pion = this;
 		}
 

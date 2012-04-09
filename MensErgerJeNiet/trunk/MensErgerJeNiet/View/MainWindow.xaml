@@ -104,6 +104,7 @@
 				<Label Height="87" HorizontalAlignment="Left" Margin="18,76,0,0" Name="lblDice" VerticalAlignment="Top" Width="167" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="64" FontWeight="Bold" />
 				<TextBox Height="23" HorizontalAlignment="Left" Margin="112,184,0,0" Name="diceCheat" VerticalAlignment="Top" Width="73" HorizontalContentAlignment="Center" />
 				<Label Content="Dobbelcheat" Height="28" HorizontalAlignment="Left" Margin="18,182,0,0" Name="label5" VerticalAlignment="Top" />
+				<Button Content="Text View" Height="23" HorizontalAlignment="Left" Margin="18,214,0,0" Name="TextViewButton" VerticalAlignment="Top" Width="167" FontWeight="Normal" FontSize="12" Click="TextViewButton_Click" />
 			</Grid>
 		</GroupBox>
 	</Grid>

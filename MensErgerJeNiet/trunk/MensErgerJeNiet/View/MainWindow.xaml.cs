@@ -182,9 +182,9 @@ namespace MensErgerJeNiet
 			//MessageBox.Show(speler.ToString() + ": " + speler.Status.ToString());
 		}
 
-		private void Window_Loaded(object sender, RoutedEventArgs e)
+		private void TextViewButton_Click(object sender, RoutedEventArgs e)
 		{
-
+			// Todo
 		}
 	}
 }
