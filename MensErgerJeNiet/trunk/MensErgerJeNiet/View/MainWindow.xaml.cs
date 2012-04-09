@@ -78,7 +78,7 @@ namespace MensErgerJeNiet
 							j++;
 						}
 					}
-
+					MessageBox.Show(speler.ToString());
 					Wachtvak wachtVak = _model.GetWachtvak(speler);
 
 					int n = 0;
