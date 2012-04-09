@@ -64,6 +64,7 @@ namespace MensErgerJeNiet.Controller
 				s.Changed += SpelerChangedHandler;
 			}
 
+			// Speler 1 status op WachtOpDobbelsteen zetten.
 			if (_spelers[0] != null)
 			{
 				_spelers[0].Status = SpelerStatus.WachtOpDobbelsteen;
@@ -88,8 +89,8 @@ namespace MensErgerJeNiet.Controller
 						_spelers[_speler].ValueDiced = ((EventArgs<ViewEvents, int>) e).Value;
 					}
 					else
-						RollDice(); 
-					break;		
+						RollDice();
+					break;
 				}
 
 				case ViewEvents.VakClick:
@@ -105,7 +106,6 @@ namespace MensErgerJeNiet.Controller
 		private void RollDice()
 		{
 			_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
-			//_spelers[_speler].ValueDiced = 41;
 		}
 
 		private void VakClick(Vak vak)
@@ -127,9 +127,11 @@ namespace MensErgerJeNiet.Controller
 					{
 						Speler speler = eigenaar;
 						int countSpelers = 0;
+
 						while (speler.Volgende != eigenaar)
 						{
 							countSpelers++;
+
 							if (speler.Volgende.Status != SpelerStatus.Uit)
 							{
 								speler.Volgende.Status = SpelerStatus.WachtOpDobbelsteen;
@@ -137,6 +139,7 @@ namespace MensErgerJeNiet.Controller
 							}
 							speler = speler.Volgende;
 						}
+
 						if (speler.Volgende.Status == SpelerStatus.Uit)
 							MessageBox.Show(eigenaar.ToString() + " is als laatste over!");
 						else
@@ -144,7 +147,6 @@ namespace MensErgerJeNiet.Controller
 							_speler += countSpelers;
 							_speler = _speler % 4;
 						}
-
 					}
 				}
 			}

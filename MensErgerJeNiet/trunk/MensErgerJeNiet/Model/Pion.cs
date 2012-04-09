@@ -54,9 +54,18 @@ namespace MensErgerJeNiet.Model
 		public void move(int steps)
 		{
 			Vak vak = _vak;
+
+			/*if (_eigenaar.ValueDiced == 6 && !(_vak is Wachtvak))
+			{
+				MessageBox.Show("6 gegooid en wachtvak.");
+			}*/
+
 			for (int i = 0; i < steps && vak.HeeftVolgende(); i++)
 			{
+				// Binnen de loop steeds een vakje verzetten.
 				vak = vak.Volgende;
+
+				// Koppelvak tegengekomen.
 				if (vak is Koppelvak)
 				{
 					Koppelvak koppelVak = (Koppelvak)vak;
