@@ -74,10 +74,9 @@ namespace MensErgerJeNiet.Model
 				{
 					Koppelvak koppelVak = (Koppelvak)vak;
 					
-					MessageBox.Show(koppelVak.Volgende.ToString());
-
 					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
 					{
+						MessageBox.Show("BOLLOCKS");
 						vak = koppelVak.Eindvak;
 					}
 				}
