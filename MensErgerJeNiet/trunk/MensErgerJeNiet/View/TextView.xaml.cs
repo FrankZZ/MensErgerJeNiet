@@ -24,13 +24,14 @@ namespace MensErgerJeNiet.View
 
 		public TextView(Bord model)
 		{
+			_model = model;
+
 			InitializeComponent();
 		}
 
 		private void Attach()
 		{
-			Vak eersteVak = _model.EersteVak;
-
+			
 		}
 	}
 }
