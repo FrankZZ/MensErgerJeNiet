@@ -51,8 +51,14 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public void move(int steps)
+		public bool move(int steps)
 		{
+			if (_eigenaar.ValueDiced != 6 && _vak is Wachtvak)
+			{
+				MessageBox.Show("Dit mag niet want je hebt geen 6 gegooid!");
+				return false;
+			}
+
 			Vak vak = _vak;
 
 			/*if (_eigenaar.ValueDiced == 6 && !(_vak is Wachtvak))
@@ -85,6 +91,8 @@ namespace MensErgerJeNiet.Model
 			_vak.Pion = null;
 
 			_vak = vak;
+
+			return true;
 		}
 
 		public void hit()

@@ -191,8 +191,10 @@ namespace MensErgerJeNiet.Model
 				steps = 1;
 			}
 
-			pion.move(steps);
-			Status = SpelerStatus.WachtOpBeurt;
+			if (pion.move(steps))
+			{
+				Status = SpelerStatus.WachtOpBeurt;
+			}
 		}
 
 		private void OnChanged()
