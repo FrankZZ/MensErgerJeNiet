@@ -56,10 +56,7 @@ namespace MensErgerJeNiet.Model
 			if (_eigenaar.PionInSpel())
 			{
 				if (_eigenaar.ValueDiced != 6 && _vak is Wachtvak)
-				{
-					MessageBox.Show("Dit mag niet want je hebt geen 6 gegooid; en het is niet je eerste beurt!");
 					return false;
-				}
 			}
 
 			Vak vak = _vak;
@@ -69,12 +66,10 @@ namespace MensErgerJeNiet.Model
 				// Koppelvak tegengekomen.
 				if (vak is Koppelvak)
 				{
-					MessageBox.Show("KOPPELTJEEEE van " + ((Beginvak)vak.Volgende).Eigenaar.ToString());
 					Koppelvak koppelVak = (Koppelvak)vak;
 					
 					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
 					{
-						MessageBox.Show("BOLLOCKS");
 						vak = koppelVak.Eindvak;
 						continue;
 					}

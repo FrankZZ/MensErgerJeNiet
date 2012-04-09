@@ -107,7 +107,6 @@ namespace MensErgerJeNiet.Model
 				nieuwVak = new Eindvak();
 
 				oudVak.Volgende = nieuwVak;
-				
 				nieuwVak.Vorige = oudVak;
 			}
 
