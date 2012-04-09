@@ -84,7 +84,7 @@ namespace MensErgerJeNiet.Model
 			{
 				if (vak.HeeftPion())
 				{
-					while (vak is Koppelvak == false)
+					while (!(vak is Koppelvak))
 					{
 						vak = ((Eindvak)vak).Vorige;
 					}
