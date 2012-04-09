@@ -52,13 +52,14 @@ namespace MensErgerJeNiet.Model
 
 			// Eerste vakje alvast maken vóór de loop
 			_eerstevak = new Beginvak();
+			_startvakken[speler] = (Beginvak) _eerstevak;
 
 			// eerste vak is in dit geval de vorige voor de loop
 			Vak huidigVak = _eerstevak;
 			Vak vorigVak = _eerstevak;
 
 			// i = 1 omdat het startvakje hierboven al gemaakt is
-			for (int i = 0; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
+			for (int i = 1; i < 40; i++) // i = 1 omdat het startvakje hierboven al gemaakt is
 			{
 				int modulo = i % 10;
 
@@ -95,7 +96,6 @@ namespace MensErgerJeNiet.Model
 
 						for (int j = 0; j < 3; j++)
 						{
-							MessageBox.Show(j.ToString());
 							Eindvak oudVak = nieuwVak;
 
 							nieuwVak = new Eindvak();
@@ -115,7 +115,7 @@ namespace MensErgerJeNiet.Model
 			}
 
 			// koppel de laatste aan de eerste, zodat pionnen ROND kunnen lopen
-			huidigVak.Volgende = _eerstevak;
+			huidigVak.Volgende = (Beginvak)_eerstevak;
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace MensErgerJeNiet.Model.Vakken
 {
@@ -18,6 +19,7 @@ namespace MensErgerJeNiet.Model.Vakken
 			set
 			{
 				_eigenaar = value;
+				MessageBox.Show(value.ToString());
 			}
 		}
     }

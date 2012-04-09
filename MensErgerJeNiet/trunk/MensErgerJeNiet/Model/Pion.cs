@@ -72,6 +72,7 @@ namespace MensErgerJeNiet.Model
 				// Koppelvak tegengekomen.
 				if (vak is Koppelvak)
 				{
+					MessageBox.Show("KOPPELTJEEEE van " + ((Beginvak)vak.Volgende).Eigenaar.ToString());
 					Koppelvak koppelVak = (Koppelvak)vak;
 					
 					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
