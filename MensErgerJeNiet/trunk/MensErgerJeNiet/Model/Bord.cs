@@ -123,10 +123,10 @@ namespace MensErgerJeNiet.Model
 			for (int j = 0; j < 3; j++)
 			{
 				wachtVak.VolgendeWachtvak = new Wachtvak();
+				
+				wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
 
 				wachtVak.Volgende = _startvakken[speler];
-
-				wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
 			}
 		}
 	}
