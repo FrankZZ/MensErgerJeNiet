@@ -1,8 +1,8 @@
 ﻿<Window x:Class="MensErgerJeNiet.View.TextView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TextView" Height="300" Width="300">
+        Title="TextView" Height="430" Width="669">
     <Grid>
-        
-    </Grid>
+		<TextBlock Height="391" HorizontalAlignment="Left" Name="textView" Text="TextBlock" VerticalAlignment="Top" Width="647" />
+	</Grid>
 </Window>
