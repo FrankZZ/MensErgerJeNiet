@@ -46,12 +46,6 @@ namespace MensErgerJeNiet.Model
 			set
 			{
 				_valueDiced = value;
-
-				if (value == 6)
-				{
-					MessageBox.Show("Er is 6 gegooid!");
-				}
-
 				Status = SpelerStatus.WachtOpPion;
 			}
 		}
@@ -195,6 +189,18 @@ namespace MensErgerJeNiet.Model
 			{
 				Status = SpelerStatus.WachtOpBeurt;
 			}
+		}
+
+		// Zijn er al pionnen in het spel of staan ze allemaal nog op een wachtvak?
+		public bool PionInSpel()
+		{
+			foreach (Pion pion in Pionnen)
+			{
+				if (!(pion.Vak is Wachtvak))
+					return true;
+			}
+
+			return false;
 		}
 
 		private void OnChanged()

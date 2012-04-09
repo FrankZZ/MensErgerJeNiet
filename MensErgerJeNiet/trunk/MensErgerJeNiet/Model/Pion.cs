@@ -53,18 +53,16 @@ namespace MensErgerJeNiet.Model
 
 		public bool move(int steps)
 		{
-			if (_eigenaar.ValueDiced != 6 && _vak is Wachtvak)
+			if (_eigenaar.PionInSpel())
 			{
-				MessageBox.Show("Dit mag niet want je hebt geen 6 gegooid!");
-				return false;
+				if (_eigenaar.ValueDiced != 6 && _vak is Wachtvak)
+				{
+					MessageBox.Show("Dit mag niet want je hebt geen 6 gegooid; en het is niet je eerste beurt!");
+					return false;
+				}
 			}
 
 			Vak vak = _vak;
-
-			/*if (_eigenaar.ValueDiced == 6 && !(_vak is Wachtvak))
-			{
-				MessageBox.Show("6 gegooid en wachtvak.");
-			}*/
 
 			for (int i = 0; i < steps && vak.HeeftVolgende(); i++)
 			{
@@ -86,10 +84,8 @@ namespace MensErgerJeNiet.Model
 				}
 			}
 
-			vak.Pion = this; //geslagen, oude replaced.
-
+			vak.Pion = this; // Geslagen, oude replaced.
 			_vak.Pion = null;
-
 			_vak = vak;
 
 			return true;
