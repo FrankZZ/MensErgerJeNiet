@@ -95,6 +95,7 @@ namespace MensErgerJeNiet.Model
 
 						for (int j = 0; j < 4; j++)
 						{
+							MessageBox.Show(j.ToString());
 							Eindvak oudVak = nieuwVak;
 
 							nieuwVak = new Eindvak();
