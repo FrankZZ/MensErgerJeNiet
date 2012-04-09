@@ -187,7 +187,14 @@ namespace MensErgerJeNiet.Model
 
 			if (pion.move(steps))
 			{
-				Status = SpelerStatus.WachtOpBeurt;
+				if (ValueDiced == 6)
+				{
+					Status = SpelerStatus.WachtOpDobbelsteen;
+				}
+				else
+				{
+					Status = SpelerStatus.WachtOpBeurt;
+				}
 			}
 		}
 
