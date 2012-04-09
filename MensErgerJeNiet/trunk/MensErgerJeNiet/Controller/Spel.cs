@@ -108,6 +108,11 @@ namespace MensErgerJeNiet.Controller
 			_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
 		}
 
+		private void DumpText()
+		{
+			new TextView(
+		}
+
 		private void VakClick(Vak vak)
 		{
 			if (vak.HeeftPion())
