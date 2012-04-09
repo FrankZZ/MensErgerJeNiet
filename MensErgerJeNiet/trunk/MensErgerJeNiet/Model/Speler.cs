@@ -106,13 +106,14 @@ namespace MensErgerJeNiet.Model
 			{
 				Wachtvak wachtVak = _wachtvak;
 
-				while (wachtVak.HeeftVolgendeWachtvak())
+				for (int i = 0; i < 4; i++)
 				{
 					if (wachtVak.HeeftPion() == false)
 					{
 						return wachtVak;
 					}
-					wachtVak = (Wachtvak) wachtVak.VolgendeWachtvak;
+					if (wachtVak.HeeftVolgendeWachtvak())
+						wachtVak = (Wachtvak) wachtVak.VolgendeWachtvak;
 				}
 				return null;
 			}
@@ -156,12 +157,14 @@ namespace MensErgerJeNiet.Model
 			Wachtvak wachtVak = _wachtvak;
 			int i = 0;
 
-			while (wachtVak.HeeftVolgendeWachtvak())
+			while (i < 4)
 			{
 				wachtVak.Pion = _pionnen[i];
 				_pionnen[i].Vak = wachtVak;
 
-				wachtVak = (Wachtvak) wachtVak.VolgendeWachtvak;
+				if (wachtVak.HeeftVolgendeWachtvak())
+					wachtVak = (Wachtvak) wachtVak.VolgendeWachtvak;
+
 				i++;
 			}	
 		}
