@@ -110,7 +110,7 @@ namespace MensErgerJeNiet.Controller
 
 		private void DumpText()
 		{
-			new TextView(
+			//new TextView(
 		}
 
 		private void VakClick(Vak vak)
