@@ -190,11 +190,10 @@ namespace MensErgerJeNiet.Model
 				if (ValueDiced == 6)
 				{
 					Status = SpelerStatus.WachtOpDobbelsteen;
+					return;
 				}
-				else
-				{
-					Status = SpelerStatus.WachtOpBeurt;
-				}
+
+				Status = SpelerStatus.WachtOpBeurt;
 			}
 		}
 
