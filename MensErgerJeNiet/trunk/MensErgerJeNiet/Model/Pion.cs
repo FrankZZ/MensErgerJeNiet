@@ -66,9 +66,6 @@ namespace MensErgerJeNiet.Model
 
 			for (int i = 0; i < steps && vak.HeeftVolgende(); i++)
 			{
-				// Binnen de loop steeds een vakje verzetten.
-				vak = vak.Volgende;
-
 				// Koppelvak tegengekomen.
 				if (vak is Koppelvak)
 				{
@@ -79,8 +76,12 @@ namespace MensErgerJeNiet.Model
 					{
 						MessageBox.Show("BOLLOCKS");
 						vak = koppelVak.Eindvak;
+						continue;
 					}
 				}
+
+				// Binnen de loop steeds een vakje verzetten.
+				vak = vak.Volgende;
 			}
 
 			vak.Pion = this; // Geslagen, oude replaced.

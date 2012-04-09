@@ -48,6 +48,7 @@ namespace MensErgerJeNiet
 			
 			AttachObserverToVak(_observers[_arcs[i]], beginVak);
 			i++;
+			speler++;
 
 			Vak huidigVak = beginVak.Volgende;
 			Eindvak[] eindVakken = new Eindvak[4];
@@ -103,7 +104,7 @@ namespace MensErgerJeNiet
 				
 				if (i % 10 == 0)
 				{
-					speler++;
+					speler = ++speler % 4;
 				}
 
 				huidigVak = huidigVak.Volgende;
