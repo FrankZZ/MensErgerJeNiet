@@ -102,7 +102,7 @@
 				<TextBlock Height="69" HorizontalAlignment="Left" Margin="18,292,0,0" Name="txtStatus" Text="" VerticalAlignment="Top" Width="167" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" FontWeight="Bold" />
 				<Label Height="32" HorizontalAlignment="Left" Margin="18,9,0,0" Name="lblCurrPlayer" VerticalAlignment="Top" Width="167" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold" />
 				<Label Height="87" HorizontalAlignment="Left" Margin="18,76,0,0" Name="lblDice" VerticalAlignment="Top" Width="167" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="64" FontWeight="Bold" />
-				<TextBox Height="23" HorizontalAlignment="Left" Margin="112,184,0,0" Name="diceCheat" VerticalAlignment="Top" Width="73" />
+				<TextBox Height="23" HorizontalAlignment="Left" Margin="112,184,0,0" Name="diceCheat" VerticalAlignment="Top" Width="73" HorizontalContentAlignment="Center" />
 				<Label Content="Dobbelcheat" Height="28" HorizontalAlignment="Left" Margin="18,182,0,0" Name="label5" VerticalAlignment="Top" />
 			</Grid>
 		</GroupBox>
