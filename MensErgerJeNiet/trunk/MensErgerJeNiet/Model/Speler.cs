@@ -177,14 +177,9 @@ namespace MensErgerJeNiet.Model
 
 			int steps = _valueDiced;
 
-			// extra stap om van wacht->start te gaan
+			// om van wacht->start te gaan is 1 stapje, ongeacht wat je gooit
 			if (pion.Vak is Wachtvak)
 			{
-				/*if (steps != 6)
-				{
-					Status = SpelerStatus.WachtOpBeurt;
-					return;
-				}*/
 				steps = 1;
 			}
 
