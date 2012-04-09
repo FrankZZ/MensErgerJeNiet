@@ -93,7 +93,7 @@ namespace MensErgerJeNiet.Model
 						Eindvak nieuwVak = new Eindvak();
 						((Koppelvak)huidigVak).Eindvak = nieuwVak;
 
-						for (int j = 0; j < 4; j++)
+						for (int j = 0; j < 3; j++)
 						{
 							MessageBox.Show(j.ToString());
 							Eindvak oudVak = nieuwVak;
