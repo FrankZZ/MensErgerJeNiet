@@ -80,14 +80,14 @@ namespace MensErgerJeNiet
 							j++;
 						}
 					}
-					MessageBox.Show(speler.ToString());
+					//MessageBox.Show(speler.ToString());
 					Wachtvak wachtVak = _model.GetWachtvak(speler);
 
 					int n = 0;
 
 					while (n < 4)
 					{
-						MessageBox.Show("WACHT " + n.ToString());
+						//MessageBox.Show("WACHT " + n.ToString());
 						int idx = 40 + n + (speler * 4);
 						ArcObserver arc = _observers[_arcs[idx]];
 
