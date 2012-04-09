@@ -67,14 +67,16 @@ namespace MensErgerJeNiet
 						
 						int j = 0;
 
-						while (eindVak.HeeftVolgende() && j < 4)
+						while (j < 4)
 						{
 							int idx = 56 + j + (speler * 4);
 							ArcObserver arc = _observers[_arcs[idx]];
 							
 							AttachObserverToVak(arc, eindVak);
 
-							eindVak = (Eindvak) eindVak.Volgende;
+							if (eindVak.HeeftVolgende())
+								eindVak = (Eindvak) eindVak.Volgende;
+
 							j++;
 						}
 					}
@@ -83,14 +85,16 @@ namespace MensErgerJeNiet
 
 					int n = 0;
 
-					while (wachtVak.HeeftVolgendeWachtvak())
+					while (n < 4)
 					{
+						MessageBox.Show("WACHT " + n.ToString());
 						int idx = 40 + n + (speler * 4);
 						ArcObserver arc = _observers[_arcs[idx]];
 
 						AttachObserverToVak(arc, wachtVak);
 
-						wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
+						if (wachtVak.HeeftVolgendeWachtvak())
+							wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
 
 						n++;
 					}

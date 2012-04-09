@@ -55,6 +55,7 @@ namespace MensErgerJeNiet.Model
 
 			_startvakken[speler] = (Beginvak)vorigVak;
 			_eerstevak = vorigVak;
+			MaakWachtvakken(speler);
 			speler++;
 
 			// i = 1 omdat het startvakje hierboven al gemaakt is
@@ -67,20 +68,7 @@ namespace MensErgerJeNiet.Model
 					huidigVak = new Beginvak();
 					_startvakken[speler] = (Beginvak)huidigVak;
 
-					Wachtvak wachtVak = new Wachtvak();
-
-					wachtVak.Volgende = huidigVak;
-
-					_wachtvakken[speler] = wachtVak;
-
-					for (int j = 0; j < 4; j++)
-					{
-						wachtVak.VolgendeWachtvak = new Wachtvak();
-
-						wachtVak.Volgende = _startvakken[speler];
-
-						wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
-					}
+					MaakWachtvakken(speler);
 
 					speler = ++speler % 4;
 				}
@@ -88,19 +76,7 @@ namespace MensErgerJeNiet.Model
 				{
 					if (modulo == 9) // Koppelvakje
 					{
-						huidigVak = new Koppelvak();
-						
-						Eindvak nieuwVak = new Eindvak();
-						((Koppelvak)huidigVak).Eindvak = nieuwVak;
-
-						for (int j = 0; j < 3; j++)
-						{
-							Eindvak oudVak = nieuwVak;
-
-							nieuwVak = new Eindvak();
-
-							oudVak.Volgende = nieuwVak;
-						}
+						huidigVak = MaakKoppelvak();
 					}
 					else
 					{
@@ -115,6 +91,43 @@ namespace MensErgerJeNiet.Model
 
 			// koppel de laatste aan de eerste, zodat pionnen ROND kunnen lopen
 			huidigVak.Volgende = (Beginvak)_eerstevak;
+		}
+
+		private Koppelvak MaakKoppelvak()
+		{
+			Koppelvak huidigVak = new Koppelvak();
+
+			Eindvak nieuwVak = new Eindvak();
+			((Koppelvak)huidigVak).Eindvak = nieuwVak;
+
+			for (int j = 0; j < 3; j++)
+			{
+				Eindvak oudVak = nieuwVak;
+
+				nieuwVak = new Eindvak();
+
+				oudVak.Volgende = nieuwVak;
+			}
+
+			return huidigVak;
+		}
+
+		private void MaakWachtvakken(int speler)
+		{
+			Wachtvak wachtVak = new Wachtvak();
+
+			wachtVak.Volgende = _startvakken[speler];
+
+			_wachtvakken[speler] = wachtVak;
+
+			for (int j = 0; j < 3; j++)
+			{
+				wachtVak.VolgendeWachtvak = new Wachtvak();
+
+				wachtVak.Volgende = _startvakken[speler];
+
+				wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
+			}
 		}
 	}
 }
