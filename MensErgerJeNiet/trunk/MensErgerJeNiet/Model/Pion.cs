@@ -79,9 +79,25 @@ namespace MensErgerJeNiet.Model
 				vak = vak.Volgende;
 			}
 
-			vak.Pion = this; // Geslagen, oude replaced.
-			_vak.Pion = null;
-			_vak = vak;
+			// Binnen de thuishaven.
+			if (vak is Eindvak)
+			{
+				if (vak.HeeftPion())
+				{
+					while (vak is Koppelvak == false)
+					{
+						vak = ((Eindvak)vak).Vorige;
+					}
+
+					vak.Pion = this;
+				}
+			}
+			else
+			{
+				vak.Pion = this; // Geslagen, oude replaced.
+				_vak.Pion = null;
+				_vak = vak;
+			}
 
 			return true;
 		}
