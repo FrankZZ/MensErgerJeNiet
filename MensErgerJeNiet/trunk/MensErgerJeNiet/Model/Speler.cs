@@ -125,8 +125,8 @@ namespace MensErgerJeNiet.Model
 				if (value != null)
 				{
 					// Eigenaar toekennen aan beginvakje
-					value.Eigenaar = this;
 					_beginvak = value;
+					_beginvak.Eigenaar = this;
 				}
 			}
 
