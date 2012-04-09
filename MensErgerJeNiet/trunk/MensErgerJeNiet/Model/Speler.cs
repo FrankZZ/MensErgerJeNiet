@@ -46,7 +46,12 @@ namespace MensErgerJeNiet.Model
 			set
 			{
 				_valueDiced = value;
-				// OnChanged wordt gevuurd via Status.
+
+				if (value == 6)
+				{
+					MessageBox.Show("Er is 6 gegooid!");
+				}
+
 				Status = SpelerStatus.WachtOpPion;
 			}
 		}
@@ -140,13 +145,9 @@ namespace MensErgerJeNiet.Model
 		public Speler(Beginvak beginVak, Wachtvak wachtVak, String naam)
 		{
 			_naam = naam;
-
 			_status = SpelerStatus.WachtOpBeurt;
-
 			_wachtvak = wachtVak;
-
 			Beginvak = beginVak;
-
 			_pionnen = new Pion[4];
 			
 			for (int i = 0; i < _pionnen.Length; i++)
@@ -173,7 +174,7 @@ namespace MensErgerJeNiet.Model
 
 		public void onClickPion(Pion pion)
 		{
-			// zijn we aan de beurt?
+			// zijn we aan de beurt? Zoniet, stop!
 			if (_status != SpelerStatus.WachtOpPion)
 				return;
 
@@ -188,14 +189,10 @@ namespace MensErgerJeNiet.Model
 					return;
 				}*/
 				steps = 1;
-				pion.move(steps);
-				Status = SpelerStatus.WachtOpDobbelsteen;
 			}
-			else
-			{
-				pion.move(steps);
-				Status = SpelerStatus.WachtOpBeurt;
-			}
+
+			pion.move(steps);
+			Status = SpelerStatus.WachtOpBeurt;
 		}
 
 		private void OnChanged()
