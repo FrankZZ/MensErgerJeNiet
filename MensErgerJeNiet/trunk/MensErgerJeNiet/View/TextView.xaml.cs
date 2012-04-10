@@ -32,21 +32,6 @@ namespace MensErgerJeNiet.View
 			Attach();
 		}
 
-		private void Attach2()
-		{
-			/*foreach (Pion[] pionnen in _pionnen)
-			{
-				for (int i = 1; i < 5; i++)
-				{
-					Pion p = pionnen[i-1];
-
-					textView.Text += p.Eigenaar + ": Pion " + i.ToString() + " - " + p.Vak.GetType().Name.ToString() + "\r\n";
-				}
-			}*/
-
-
-		}
-
 		private void OutputVak(int i, Vak vak)
 		{
 			textView.Text += vak.GetType().Name.ToString() + " " + i.ToString() + ": ";
