@@ -100,6 +100,12 @@ namespace MensErgerJeNiet.Controller
 
 					break;
 				}
+
+				case ViewEvents.TextClick:
+				{
+					DumpText();
+					break;
+				}
 			}
 		}
 

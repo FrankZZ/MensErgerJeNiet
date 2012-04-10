@@ -8,6 +8,7 @@ namespace MensErgerJeNiet.Shared
 	public enum ViewEvents
 	{
 		VakClick,
-		DiceClick
+		DiceClick,
+		TextClick
 	}
 }
