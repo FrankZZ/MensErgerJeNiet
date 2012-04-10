@@ -180,7 +180,7 @@ namespace MensErgerJeNiet.Model
 			// om van wacht->start te gaan is 1 stapje, ongeacht wat je gooit
 			if (pion.Vak is Wachtvak)
 			{
-				steps = 1;
+				steps += 1;
 			}
 
 			if (pion.move(steps))

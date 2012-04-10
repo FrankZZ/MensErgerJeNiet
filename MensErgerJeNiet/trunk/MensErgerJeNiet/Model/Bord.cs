@@ -99,6 +99,8 @@ namespace MensErgerJeNiet.Model
 
 			Eindvak nieuwVak = new Eindvak();
 			((Koppelvak)huidigVak).Eindvak = nieuwVak;
+			
+			nieuwVak.Vorige = huidigVak;
 
 			for (int j = 0; j < 3; j++)
 			{

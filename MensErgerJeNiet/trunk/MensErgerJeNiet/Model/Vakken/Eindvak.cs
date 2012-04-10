@@ -7,9 +7,9 @@ namespace MensErgerJeNiet.Model.Vakken
 {
 	public class Eindvak : Vak
 	{
-		private Eindvak _vorige;
+		private Vak _vorige;
 
-		public Eindvak Vorige
+		public Vak Vorige
 		{
 			get
 			{
