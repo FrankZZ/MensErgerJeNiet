@@ -1,8 +1,9 @@
 ﻿<Window x:Class="MensErgerJeNiet.View.TextView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TextView" Height="430" Width="669">
+        Title="TextView" Height="248" Width="451" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Background="Black" Loaded="Window_Loaded">
     <Grid>
-		<TextBlock Height="391" HorizontalAlignment="Left" Name="textView" Text="" VerticalAlignment="Top" Width="647" Foreground="White" Background="Black" FontFamily="Consolas" FontSize="14" FontWeight="Bold" />
+		<TextBlock Height="209" HorizontalAlignment="Left" Name="textView" Text="" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+         ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Width="429" Foreground="White"  Background="Black" FontFamily="Consolas" FontSize="14" FontWeight="Bold" />
 	</Grid>
 </Window>
