@@ -18,13 +18,19 @@ namespace MensErgerJeNiet.Controller
 		private Dobbelsteen _dobbelsteen;
 		private Speler[] _spelers;
 
+		private ChangedEventHandler changedHandler;
+
 		private int _speler;
 
 		private MainWindow _window;
 
 		public Spel()
 		{
-			
+			changedHandler = new ChangedEventHandler(updateFromView);
+
+			StartView startView = new StartView();
+			startView.Changed += changedHandler;
+
 		}
 
 		private void start(int spelers)
@@ -60,7 +66,7 @@ namespace MensErgerJeNiet.Controller
 			_spelers[_spelers.Length - 1].Volgende = _spelers[0];
 
 			_window = new MainWindow(_bord);
-			_window.Changed += new ChangedEventHandler(updateFromView);
+			_window.Changed += changedHandler;
 
 			ChangedEventHandler SpelerChangedHandler = new ChangedEventHandler(_window.updateFromSpeler);
 
@@ -108,13 +114,10 @@ namespace MensErgerJeNiet.Controller
 
 				case ViewEvents.StartClick:
 				{
-					if (e is EventArgs<ViewEvents, String>)
+					if (e is EventArgs<ViewEvents, int>)
 					{
-						EventArgs<ViewEvents, String> ev = (EventArgs<ViewEvents, String>) e;
-
-						int spelers = Convert.ToInt32(ev.Value);
-
-						start(spelers);
+						EventArgs<ViewEvents, int> ev = (EventArgs<ViewEvents, int>) e;
+						start(ev.Value);
 					}
 					break;
 				}

@@ -9,6 +9,6 @@
 			<ComboBoxItem Content="3" />
 			<ComboBoxItem Content="4" />
 		</ComboBox>
-		<Button Content="Start" Height="22" HorizontalAlignment="Left" Margin="78,157,0,0" Name="button1" VerticalAlignment="Top" Width="146" MouseDown="button1_MouseDown" />
+		<Button Content="Start" Height="22" HorizontalAlignment="Left" Margin="78,157,0,0" Name="btnStart" VerticalAlignment="Top" Width="146" Click="btnStart_Click" />
 	</Grid>
 </Window>
