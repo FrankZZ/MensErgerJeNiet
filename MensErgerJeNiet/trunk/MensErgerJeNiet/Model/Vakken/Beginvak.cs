@@ -19,7 +19,6 @@ namespace MensErgerJeNiet.Model.Vakken
 			set
 			{
 				_eigenaar = value;
-				MessageBox.Show(value.ToString());
 			}
 		}
     }

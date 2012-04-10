@@ -88,16 +88,12 @@ namespace MensErgerJeNiet.Model
 					{
 						vak = ((Eindvak)vak).Vorige;
 					}
-
-					vak.Pion = this;
 				}
 			}
-			else
-			{
-				vak.Pion = this; // Geslagen, oude replaced.
-				_vak.Pion = null;
-				_vak = vak;
-			}
+
+			vak.Pion = this; // Geslagen, oude replaced.
+			_vak.Pion = null;
+			_vak = vak;
 
 			return true;
 		}
