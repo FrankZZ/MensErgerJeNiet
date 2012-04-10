@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MensErgerJeNiet.View.StartView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Mens Erger Je Niet - Start" Height="304" Width="322" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Mens Erger Je Niet - Start" Height="287" Width="314" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Loaded="Window_Loaded">
     <Grid>
 		<Label Content="Aantal spelers:" Height="29" HorizontalAlignment="Left" Margin="78,64,0,0" Name="label1" VerticalAlignment="Top" Width="146" FontWeight="Bold" />
 		<ComboBox Height="23" HorizontalAlignment="Left" Margin="78,107,0,0" Name="playerCount" VerticalAlignment="Top" Width="146">

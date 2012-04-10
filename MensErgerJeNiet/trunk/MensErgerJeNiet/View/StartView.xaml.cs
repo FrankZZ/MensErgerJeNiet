@@ -40,5 +40,10 @@ namespace MensErgerJeNiet.View
 			OnChanged(ViewEvents.StartClick, Convert.ToInt32(playerCount.SelectionBoxItem.ToString()));
 			Close();
 		}
+
+		private void Window_Loaded(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }
