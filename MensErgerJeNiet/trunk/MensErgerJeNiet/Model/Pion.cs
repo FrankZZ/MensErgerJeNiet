@@ -53,6 +53,9 @@ namespace MensErgerJeNiet.Model
 
 		public bool move(int steps)
 		{
+			if (_vak is Eindvak)
+				return false;
+
 			if (_eigenaar.PionInSpel())
 			{
 				if (_eigenaar.ValueDiced != 6 && _vak is Wachtvak)
