@@ -12,18 +12,20 @@ namespace MensErgerJeNiet.Model
     {
 		public event ChangedEventHandler Changed;
 
-		private Pion[] _pionnen;
-		private Wachtvak _wachtvak;
-		private Beginvak _beginvak;
-		private SpelerKleur _kleur;
+		protected Pion[] _pionnen;
+		protected Wachtvak _wachtvak;
+		protected Beginvak _beginvak;
+		protected SpelerKleur _kleur;
 
-		private Speler _volgende;
+		protected Speler _volgende;
 
-		private String _naam;
+		protected String _naam;
 
-		private SpelerStatus _status;
+		protected SpelerStatus _status;
 
-		private int _valueDiced;
+		protected int _valueDiced;
+
+		protected Dobbelsteen _dobbelsteen;
 
 		public Speler Volgende
 		{
@@ -50,7 +52,7 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public SpelerStatus Status
+		public virtual SpelerStatus Status
 		{
 			get
 			{
@@ -65,7 +67,7 @@ namespace MensErgerJeNiet.Model
 		}
 
 		// Spelernummer, één van vier
-		private int _nummer;
+		protected int _nummer;
 
 		public SpelerKleur Kleur
 		{
@@ -137,9 +139,10 @@ namespace MensErgerJeNiet.Model
 			}
 		}
 
-		public Speler(Beginvak beginVak, Wachtvak wachtVak, String naam)
+		public Speler(Beginvak beginVak, Wachtvak wachtVak, Dobbelsteen dobbelsteen, String naam)
 		{
 			_naam = naam;
+			_dobbelsteen = dobbelsteen;
 			_status = SpelerStatus.WachtOpBeurt;
 			_wachtvak = wachtVak;
 			Beginvak = beginVak;
@@ -150,6 +153,11 @@ namespace MensErgerJeNiet.Model
 				_pionnen[i] = new Pion();
 				_pionnen[i].Eigenaar = this;
 			}
+		}
+
+		public void RollDice()
+		{
+			ValueDiced = _dobbelsteen.Gooi();
 		}
 
 		public void SetPionnen()
@@ -207,7 +215,7 @@ namespace MensErgerJeNiet.Model
 			return false;
 		}
 
-		private void OnChanged()
+		protected void OnChanged()
 		{
 			if (Changed != null)
 			{

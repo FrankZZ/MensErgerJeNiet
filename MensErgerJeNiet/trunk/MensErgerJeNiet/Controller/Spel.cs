@@ -32,7 +32,7 @@ namespace MensErgerJeNiet.Controller
 
 			for (int i = 0; i < _spelers.Length; i++)
 			{
-				_spelers[i] = new Speler(_bord.GetStartVak(i), _bord.GetWachtvak(i), "Speler " + (i + 1));
+				_spelers[i] = new Speler(_bord.GetStartVak(i), _bord.GetWachtvak(i), _dobbelsteen, "Speler " + (i + 1));
 				
 				if (i > 0)
 				{
@@ -104,7 +104,7 @@ namespace MensErgerJeNiet.Controller
 
 		private void RollDice()
 		{
-			_spelers[_speler].ValueDiced = _dobbelsteen.Gooi();
+			_spelers[_speler].RollDice();
 		}
 
 		private void DumpText()
