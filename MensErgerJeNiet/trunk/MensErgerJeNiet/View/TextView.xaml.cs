@@ -54,7 +54,7 @@ namespace MensErgerJeNiet.View
 				Pion p = vak.Pion;
 			}
 
-			textView.Text += p.Eigenaar + ": Pion " + i.ToString() + " - " + p.Vak.GetType().Name.ToString() + "\r\n";
+			//textView.Text += p.Eigenaar + ": Pion " + i.ToString() + " - " + p.Vak.GetType().Name.ToString() + "\r\n";
 		}
 		/*
 		private void Attach()
