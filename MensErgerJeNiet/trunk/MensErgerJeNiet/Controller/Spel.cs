@@ -116,7 +116,7 @@ namespace MensErgerJeNiet.Controller
 				pionnen.Add(s.Pionnen);
 			}
 
-			new TextView(pionnen);
+			new TextView(pionnen).Show();
 		}
 
 		private void VakClick(Vak vak)
