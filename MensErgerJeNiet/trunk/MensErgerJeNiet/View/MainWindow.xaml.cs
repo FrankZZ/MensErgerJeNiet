@@ -189,7 +189,7 @@ namespace MensErgerJeNiet
 
 		private void TextViewButton_Click(object sender, RoutedEventArgs e)
 		{
-			// Todo
+			OnChanged(ViewEvents.TextClick);
 		}
 	}
 }
