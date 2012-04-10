@@ -21,11 +21,12 @@ namespace MensErgerJeNiet.View
 	public partial class TextView : Window
 	{
 		private List<Pion[]> _pionnen;
-		private String _content;
+		private Bord _bord;
 
-		public TextView(List<Pion[]> pionnen)
+		public TextView(Bord bord)
 		{
-			_pionnen = pionnen;
+		//	_pionnen = pionnen;
+			_bord = bord;
 
 			InitializeComponent();
 			Attach();
@@ -33,7 +34,7 @@ namespace MensErgerJeNiet.View
 
 		private void Attach()
 		{
-			foreach (Pion[] pionnen in _pionnen)
+			/*foreach (Pion[] pionnen in _pionnen)
 			{
 				for (int i = 1; i < 5; i++)
 				{
@@ -41,7 +42,9 @@ namespace MensErgerJeNiet.View
 
 					textView.Text += p.Eigenaar + ": Pion " + i.ToString() + " - " + p.Vak.GetType().Name.ToString() + "\r\n";
 				}
-			}
+			}*/
+
+
 		}
 	}
 }
