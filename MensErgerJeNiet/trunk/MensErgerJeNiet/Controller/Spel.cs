@@ -171,7 +171,7 @@ namespace MensErgerJeNiet.Controller
 						else
 						{
 							_speler += countSpelers;
-							_speler = _speler % 4;
+							_speler = _speler % _spelers.Length;
 						}
 					}
 				}
