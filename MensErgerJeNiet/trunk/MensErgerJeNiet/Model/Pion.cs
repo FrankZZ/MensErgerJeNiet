@@ -71,7 +71,9 @@ namespace MensErgerJeNiet.Model
 				{
 					Koppelvak koppelVak = (Koppelvak)vak;
 					
-					if (((Beginvak) koppelVak.Volgende).Eigenaar == _eigenaar)
+					Beginvak beginVak = ((Beginvak) koppelVak.Volgende);
+
+					if (beginVak.HeeftEigenaar() && beginVak.Eigenaar == _eigenaar)
 					{
 						vak = koppelVak.Eindvak;
 						continue;

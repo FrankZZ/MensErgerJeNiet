@@ -24,16 +24,22 @@ namespace MensErgerJeNiet.Controller
 
 		public Spel()
 		{
+			
+		}
+
+		private void start(int spelers)
+		{
 			_speler = 0;
 			_bord = new Bord();
 
 			_dobbelsteen = new Dobbelsteen();
-			_spelers = new Speler[4];
+			
+			_spelers = new Speler[spelers];
 
 			for (int i = 0; i < _spelers.Length; i++)
 			{
 				_spelers[i] = new Speler(_bord.GetStartVak(i), _bord.GetWachtvak(i), _dobbelsteen, "Speler " + (i + 1));
-				
+
 				if (i > 0)
 				{
 					_spelers[i - 1].Volgende = _spelers[i];
@@ -97,6 +103,19 @@ namespace MensErgerJeNiet.Controller
 				case ViewEvents.TextClick:
 				{
 					DumpText();
+					break;
+				}
+
+				case ViewEvents.StartClick:
+				{
+					if (e is EventArgs<ViewEvents, String>)
+					{
+						EventArgs<ViewEvents, String> ev = (EventArgs<ViewEvents, String>) e;
+
+						int spelers = Convert.ToInt32(ev.Value);
+
+						start(spelers);
+					}
 					break;
 				}
 			}
