@@ -21,5 +21,10 @@ namespace MensErgerJeNiet.Model.Vakken
 				_eigenaar = value;
 			}
 		}
+
+		public bool HeeftEigenaar()
+		{
+			return (_eigenaar != null);
+		}
     }
 }

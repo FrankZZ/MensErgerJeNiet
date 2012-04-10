@@ -14,6 +14,8 @@ namespace MensErgerJeNiet.Model
 		{
 
 		}
+
+
 		public override SpelerStatus Status
 		{
 			get

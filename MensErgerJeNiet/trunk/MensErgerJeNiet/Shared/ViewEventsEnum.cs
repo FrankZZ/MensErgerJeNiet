@@ -9,6 +9,7 @@ namespace MensErgerJeNiet.Shared
 	{
 		VakClick,
 		DiceClick,
-		TextClick
+		TextClick,
+		StartClick
 	}
 }

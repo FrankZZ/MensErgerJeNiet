@@ -57,6 +57,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\BotSpeler.cs" />
+    <Compile Include="View\StartView.xaml.cs">
+      <DependentUpon>StartView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TextView.xaml.cs">
       <DependentUpon>TextView.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\StartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TextView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
