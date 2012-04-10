@@ -28,6 +28,7 @@ namespace MensErgerJeNiet.View
 			_pionnen = pionnen;
 
 			InitializeComponent();
+			Attach();
 		}
 
 		private void Attach()
