@@ -24,11 +24,7 @@ namespace MensErgerJeNiet.View
 		public StartView()
 		{
 			InitializeComponent();
-		}
-
-		private void button1_MouseDown(object sender, MouseButtonEventArgs e)
-		{
-			OnChanged(ViewEvents.DiceClick, Convert.ToInt32(playerCount.SelectedValue.ToString()));
+			Show();
 		}
 
 		private void OnChanged(ViewEvents evt, int value)
@@ -37,6 +33,12 @@ namespace MensErgerJeNiet.View
 			{
 				Changed(this, new EventArgs<ViewEvents, int>(evt, value));
 			}
+		}
+
+		private void btnStart_Click(object sender, RoutedEventArgs e)
+		{
+			OnChanged(ViewEvents.StartClick, Convert.ToInt32(playerCount.SelectionBoxItem.ToString()));
+			Close();
 		}
 	}
 }
