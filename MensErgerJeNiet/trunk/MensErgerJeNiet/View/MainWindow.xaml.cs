@@ -18,7 +18,6 @@ using MensErgerJeNiet.Controller;
 
 namespace MensErgerJeNiet
 {
-
 	public partial class MainWindow : Window
 	{
 		public ChangedEventHandler Changed;
