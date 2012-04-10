@@ -193,13 +193,19 @@ namespace MensErgerJeNiet.Model
 
 			if (pion.move(steps))
 			{
-				if (ValueDiced == 6)
+				if (PionnenThuishaven())
 				{
-					Status = SpelerStatus.WachtOpDobbelsteen;
-					return;
+					Status = SpelerStatus.Uit;
 				}
-
-				Status = SpelerStatus.WachtOpBeurt;
+				else
+				{
+					if (ValueDiced == 6)
+					{
+						Status = SpelerStatus.WachtOpDobbelsteen;
+						return;
+					}
+					Status = SpelerStatus.WachtOpBeurt;
+				}
 			}
 		}
 
@@ -208,11 +214,22 @@ namespace MensErgerJeNiet.Model
 		{
 			foreach (Pion pion in Pionnen)
 			{
-				if (!(pion.Vak is Wachtvak))
+				if (!(pion.Vak is Wachtvak) && !(pion.Vak is Eindvak))
 					return true;
 			}
 
 			return false;
+		}
+
+		public bool PionnenThuishaven()
+		{
+			foreach (Pion pion in Pionnen)
+			{
+				if (!(pion.Vak is Eindvak))
+					return false;
+			}
+
+			return true;
 		}
 
 		protected void OnChanged()

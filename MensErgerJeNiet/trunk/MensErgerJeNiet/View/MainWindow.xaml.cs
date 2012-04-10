@@ -177,13 +177,31 @@ namespace MensErgerJeNiet
 				lblDice.Content = "";
 				txtStatus.Text = "Gooi met de dobbelsteen";
 				lblCurrPlayer.Content = speler.ToString();
-			}
+				
+				Brush kleur = Brushes.Blue;
 
-			if (speler.Status == SpelerStatus.WachtOpPion)
+				switch (speler.Kleur)
+				{
+					case SpelerKleur.Groen: kleur = Brushes.Green; break;
+					case SpelerKleur.Geel: kleur = Brushes.Yellow; break;
+					case SpelerKleur.Rood: kleur = Brushes.Red; break;
+					default: break;
+				}
+
+				lblCurrPlayer.Foreground = kleur;
+
+			} 
+			else if (speler.Status == SpelerStatus.WachtOpPion)
 			{
 				DiceButton.IsEnabled = false;
 				txtStatus.Text = "Kies welke van uw pionnen u " + speler.ValueDiced + " plaats" + (speler.ValueDiced > 1 ? "en" : "") + " wilt verzetten";
 				lblDice.Content = speler.ValueDiced;
+			}
+			else if (speler.Status == SpelerStatus.Uit)
+			{
+				DiceButton.IsEnabled = false;
+				txtStatus.Text = "Het spel is afgelopen. Gefeliciteerd, " + speler + ", je hebt gewonnen!";
+
 			}
 			//MessageBox.Show(speler.ToString() + ": " + speler.Status.ToString());
 		}
