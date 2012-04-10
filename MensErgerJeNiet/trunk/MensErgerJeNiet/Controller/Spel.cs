@@ -69,15 +69,8 @@ namespace MensErgerJeNiet.Controller
 			{
 				_spelers[0].Status = SpelerStatus.WachtOpDobbelsteen;
 			}
-
-			ShowWindow();
 		}
 
-		private void ShowWindow()
-		{
-			_window.Show();
-		}
-		
 		public void updateFromView(object sender, EventArgs e)
 		{
 			switch (((EventArgs<ViewEvents>) e).Event)
@@ -116,13 +109,7 @@ namespace MensErgerJeNiet.Controller
 
 		private void DumpText()
 		{
-			List<Pion[]> pionnen = new List<Pion[]>();
-			foreach(Speler s in _spelers)
-			{
-				pionnen.Add(s.Pionnen);
-			}
-
-			new TextView(_bord).Show();
+			new TextView(_bord);
 		}
 
 		private void VakClick(Vak vak)

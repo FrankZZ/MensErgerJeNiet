@@ -24,11 +24,13 @@ namespace MensErgerJeNiet.View
 
 		public TextView(Bord bord)
 		{
-		//	_pionnen = pionnen;
 			_model = bord;
 
 			InitializeComponent();
+
 			Attach();
+
+			Show();
 		}
 
 		private void OutputVak(int i, Vak vak)
@@ -114,11 +116,6 @@ namespace MensErgerJeNiet.View
 				huidigVak = huidigVak.Volgende;
 				i++;
 			}
-		}
-
-		private void Window_Loaded(object sender, RoutedEventArgs e)
-		{
-
 		}
 	}
 }
