@@ -20,7 +20,6 @@ namespace MensErgerJeNiet.View
 	/// </summary>
 	public partial class TextView : Window
 	{
-		private List<Pion[]> _pionnen;
 		private Bord _model;
 
 		public TextView(Bord bord)
