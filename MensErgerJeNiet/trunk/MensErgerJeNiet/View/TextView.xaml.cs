@@ -29,7 +29,7 @@ namespace MensErgerJeNiet.View
 			_model = bord;
 
 			InitializeComponent();
-			//Attach();
+			Attach();
 		}
 
 		private void Attach2()
@@ -47,16 +47,22 @@ namespace MensErgerJeNiet.View
 
 		}
 
-		private void OutputVak(Vak vak)
+		private void OutputVak(int i, Vak vak)
 		{
+			textView.Text += vak.GetType().Name.ToString() + " " + i.ToString() + ": ";
+
 			if (vak.HeeftPion())
 			{
 				Pion p = vak.Pion;
+				textView.Text += "Pion " + p.Eigenaar.ToString();
 			}
-
-			//textView.Text += p.Eigenaar + ": Pion " + i.ToString() + " - " + p.Vak.GetType().Name.ToString() + "\r\n";
+			else
+			{
+				textView.Text += "-";
+			}
+			textView.Text += "\r\n";
 		}
-		/*
+		
 		private void Attach()
 		{
 			int i = 0;
@@ -64,17 +70,15 @@ namespace MensErgerJeNiet.View
 
 			Vak beginVak = _model.EersteVak;
 
-			
 			i++;
 			speler++;
 
 			Vak huidigVak = beginVak.Volgende;
-			Eindvak[] eindVakken = new Eindvak[4];
 
 			// Regulier veld, het kruis
-			while (huidigVak != beginVak && huidigVak.HeeftVolgende() && i < _arcs.Count)
+			while (huidigVak != beginVak && huidigVak.HeeftVolgende())
 			{
-				AttachObserverToVak(_observers[_arcs[i]], huidigVak);
+				OutputVak(i, huidigVak);
 
 				if (huidigVak is Koppelvak)
 				{
@@ -89,9 +93,8 @@ namespace MensErgerJeNiet.View
 						while (j < 4)
 						{
 							int idx = 56 + j + (speler * 4);
-							ArcObserver arc = _observers[_arcs[idx]];
 
-							AttachObserverToVak(arc, eindVak);
+							OutputVak(idx, eindVak);
 
 							if (eindVak.HeeftVolgende())
 								eindVak = (Eindvak)eindVak.Volgende;
@@ -108,9 +111,8 @@ namespace MensErgerJeNiet.View
 					{
 						//MessageBox.Show("WACHT " + n.ToString());
 						int idx = 40 + n + (speler * 4);
-						ArcObserver arc = _observers[_arcs[idx]];
 
-						AttachObserverToVak(arc, wachtVak);
+						OutputVak(idx, wachtVak);
 
 						if (wachtVak.HeeftVolgendeWachtvak())
 							wachtVak = (Wachtvak)wachtVak.VolgendeWachtvak;
@@ -128,7 +130,7 @@ namespace MensErgerJeNiet.View
 				huidigVak = huidigVak.Volgende;
 				i++;
 			}
-		}*/
+		}
 
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
