@@ -37,6 +37,8 @@ namespace MensErgerJeNiet
 			this.InitializeComponent();
 
 			Attach();
+
+			Show();
 		}
 
 		private void Attach()
