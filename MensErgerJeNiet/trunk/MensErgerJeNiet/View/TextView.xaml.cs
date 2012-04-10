@@ -38,7 +38,7 @@ namespace MensErgerJeNiet.View
 				{
 					Pion p = pionnen[i-1];
 
-
+					textView.Text += "Pion " + i.ToString() + ": " + p.Vak.ToString();
 				}
 			}
 		}
