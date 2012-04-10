@@ -39,7 +39,7 @@ namespace MensErgerJeNiet.View
 				{
 					Pion p = pionnen[i-1];
 
-					textView.Text += "Pion " + i.ToString() + ": " + p.Vak.ToString() + "\r\n";
+					textView.Text += p.Eigenaar + ": Pion " + i.ToString() + " - " + p.Vak.ToString() + "\r\n";
 				}
 			}
 		}
